@@ -16,4 +16,8 @@
 
 # source shflags from current directory
 
-killall -9 atomic_server
+killall atomic_server
+ps -ef | grep atomic_server | awk '{print $2}' | xargs kill
+killall proxy_server
+rm -rf data*
+rm -rf log*
