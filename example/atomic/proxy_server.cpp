@@ -21,6 +21,8 @@ bool running = true;
 
 char *reorder_buffer[3];
 
+pthread_mutex_t lock;
+
 //the thread function
 void *connection_handler1(void *);
 
@@ -41,6 +43,7 @@ std::list<struct connection_pair *> connection_pairs;
 
 static void cleanup(int signo)
 {
+    pthread_mutex_lock(&lock);
     running = false;
     perror("cleaning up...\n");
     for (struct connection_pair *cp : connection_pairs)
@@ -59,7 +62,15 @@ static void cleanup(int signo)
         // pthread_join(cp->thread1, NULL);
         // pthread_join(cp->thread2, NULL);
     }
-    exit(0);
+    pthread_mutex_unlock(&lock);
+    if (signo == 0)
+    {
+        return;
+    }
+    else
+    {
+        exit(0);
+    }
 }
 
 int main(int argc, char *argv[])
@@ -68,6 +79,12 @@ int main(int argc, char *argv[])
     {
         printf("usage: ./proxy_server src_port dest_port delay_time [src1 dest1 src2 dest2]\n");
         exit(0);
+    }
+
+    if (pthread_mutex_init(&lock, NULL) != 0)
+    {
+        printf("\n mutex init has failed\n");
+        return 1;
     }
 
     int socket_desc, client_sock, c;
@@ -185,6 +202,8 @@ int main(int argc, char *argv[])
     close(socket_desc);
     cleanup(0);
 
+    pthread_mutex_destroy(&lock);
+
     return 0;
 }
 
@@ -235,6 +254,21 @@ bool is_replace_str(char *target, char *replace_str)
     return true;
 }
 
+void close_connection_pair(struct connection_pair *cp)
+{
+    pthread_mutex_lock(&lock);
+    if (cp)
+    {
+        close(cp->src_sock);
+        close(cp->dest_sock);
+        //Free the socket pointer
+        free(cp);
+        connection_pairs.remove(cp);
+    }
+
+    pthread_mutex_unlock(&lock);
+}
+
 /*
  * receive from src and send to dest
  * */
@@ -280,22 +314,7 @@ void *connection_handler1(void *cp)
         write(current_pair->dest_sock, client_message, read_size);
     }
 
-    close(current_pair->src_sock);
-    close(current_pair->dest_sock);
-
-    if (read_size == 0)
-    {
-        puts("Client disconnected");
-        fflush(stdout);
-    }
-    else if (read_size == -1)
-    {
-        perror("recv failed");
-    }
-
-    //Free the socket pointer
-    free(current_pair);
-    connection_pairs.remove(current_pair);
+    close_connection_pair(current_pair);
 }
 
 /*
@@ -344,4 +363,6 @@ void *connection_handler2(void *cp)
 
         usleep(1);
     }
+
+    close_connection_pair(current_pair);
 }
