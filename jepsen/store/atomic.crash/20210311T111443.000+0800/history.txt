@@ -1,0 +1,1026 @@
+0	:invoke	:cas	[2 2]
+3	:invoke	:read	nil
+4	:invoke	:read	nil
+1	:invoke	:write	1
+2	:invoke	:read	nil
+0	:info	:cas	"indeterminate: W0311 03:14:49.795535 82832 /home/zyh/Desktop/braft/example/atomic/test.cpp:168] Fail to refresh_leader : [192.168.223.128:8700:0] [E11][127.0.1.1:8700][E11]Unknown leader, [192.168.223.129:8700:1] [E11][127.0.1.1:8700][E11]Unknown leader, [192.168.223.130:8700:2] [E11][127.0.1.1:8700][E11]Unknown leader, [192.168.223.131:8700:3] [E11][127.0.1.1:8700][E11]Unknown leader, [192.168.223.132:8700:4] [E11][127.0.1.1:8700][E11]Unknown leader\nW0311 03:14:52.798685 82832 /home/zyh/Desktop/braft/example/atomic/test.cpp:168] Fail to refresh_leader : [192.168.223.128:8700:0] [E11][127.0.1.1:8700][E11]Unknown leader, [192.168.223.129:8700:1] [E11][127.0.1.1:8700][E11]Unknown leader, [192.168.223.130:8700:2] [E11][127.0.1.1:8700][E11]Unknown leader, [192.168.223.131:8700:3] [E11][127.0.1.1:8700][E11]Unknown leader, [192.168.223.132:8700:4] [E11][127.0.1.1:8700][E11]Unknown leader\n\n"
+3	:ok	:read	0
+4	:ok	:read	0
+3	:invoke	:write	0
+2	:ok	:read	0
+5	:invoke	:read	nil
+1	:ok	:write	1
+4	:invoke	:read	nil
+2	:invoke	:write	0
+1	:invoke	:write	0
+3	:ok	:write	0
+5	:ok	:read	0
+4	:ok	:read	0
+3	:invoke	:read	nil
+1	:ok	:write	0
+5	:invoke	:cas	[0 1]
+4	:invoke	:cas	[0 3]
+1	:invoke	:write	3
+2	:ok	:write	0
+2	:invoke	:cas	[4 0]
+3	:ok	:read	0
+5	:ok	:cas	[0 1]
+1	:ok	:write	3
+3	:invoke	:write	1
+4	:info	:cas	"indeterminate: \n"
+2	:info	:cas	"indeterminate: \n"
+5	:invoke	:cas	[0 1]
+1	:invoke	:cas	[2 3]
+9	:invoke	:cas	[3 0]
+7	:invoke	:write	1
+3	:ok	:write	1
+3	:invoke	:write	1
+5	:info	:cas	"indeterminate: \n"
+9	:info	:cas	"indeterminate: \n"
+1	:info	:cas	"indeterminate: \n"
+7	:ok	:write	1
+10	:invoke	:cas	[2 4]
+6	:invoke	:read	nil
+14	:invoke	:cas	[4 0]
+7	:invoke	:write	2
+3	:ok	:write	1
+:nemesis	:info	:start	nil
+3	:invoke	:write	2
+6	:ok	:read	1
+10	:info	:cas	"indeterminate: \n"
+14	:info	:cas	"indeterminate: \n"
+7	:ok	:write	2
+15	:invoke	:write	2
+19	:invoke	:read	nil
+6	:invoke	:write	4
+7	:invoke	:read	nil
+:nemesis	:info	:start	{:n2 [:killed "n2"]}
+3	:ok	:write	2
+3	:invoke	:write	4
+15	:ok	:write	2
+19	:ok	:read	2
+6	:ok	:write	4
+15	:invoke	:write	1
+7	:ok	:read	4
+19	:invoke	:write	1
+6	:invoke	:read	nil
+7	:invoke	:cas	[1 4]
+3	:ok	:write	4
+3	:invoke	:cas	[3 2]
+19	:ok	:write	1
+15	:ok	:write	1
+6	:ok	:read	1
+3	:info	:cas	"indeterminate: \n"
+7	:ok	:cas	[1 4]
+15	:invoke	:cas	[1 3]
+19	:invoke	:read	nil
+6	:invoke	:write	4
+7	:invoke	:write	1
+8	:invoke	:read	nil
+15	:info	:cas	"indeterminate: \n"
+19	:ok	:read	4
+6	:ok	:write	4
+20	:invoke	:read	nil
+19	:invoke	:cas	[0 2]
+8	:ok	:read	4
+6	:invoke	:write	0
+7	:ok	:write	1
+8	:invoke	:read	nil
+7	:invoke	:cas	[3 0]
+20	:ok	:read	1
+19	:info	:cas	"indeterminate: \n"
+20	:invoke	:cas	[0 1]
+6	:ok	:write	0
+8	:ok	:read	0
+24	:invoke	:cas	[3 2]
+7	:info	:cas	"indeterminate: \n"
+6	:invoke	:cas	[3 2]
+8	:invoke	:cas	[3 1]
+12	:invoke	:cas	[2 1]
+20	:ok	:cas	[0 1]
+24	:info	:cas	"indeterminate: \n"
+20	:invoke	:read	nil
+6	:info	:cas	"indeterminate: \n"
+29	:invoke	:read	nil
+12	:info	:cas	"indeterminate: \n"
+8	:info	:cas	"indeterminate: \n"
+11	:invoke	:cas	[1 0]
+13	:invoke	:cas	[0 2]
+17	:invoke	:read	nil
+20	:ok	:read	1
+29	:ok	:read	1
+20	:invoke	:read	nil
+29	:invoke	:write	0
+11	:ok	:cas	[1 0]
+13	:ok	:cas	[0 2]
+17	:ok	:read	2
+11	:invoke	:read	nil
+13	:invoke	:read	nil
+17	:invoke	:read	nil
+20	:ok	:read	2
+29	:ok	:write	0
+20	:invoke	:read	nil
+29	:invoke	:cas	[1 1]
+11	:ok	:read	0
+13	:ok	:read	0
+17	:ok	:read	0
+11	:invoke	:write	1
+20	:ok	:read	0
+17	:invoke	:read	nil
+13	:invoke	:write	1
+20	:invoke	:cas	[4 4]
+29	:info	:cas	"indeterminate: \n"
+34	:invoke	:write	4
+11	:ok	:write	1
+17	:ok	:read	1
+17	:invoke	:cas	[4 0]
+13	:ok	:write	1
+20	:info	:cas	"indeterminate: \n"
+11	:invoke	:write	0
+13	:invoke	:cas	[3 3]
+25	:invoke	:cas	[3 0]
+34	:ok	:write	4
+34	:invoke	:cas	[4 4]
+17	:ok	:cas	[4 0]
+11	:ok	:write	0
+13	:info	:cas	"indeterminate: \n"
+17	:invoke	:read	nil
+25	:info	:cas	"indeterminate: \n"
+:nemesis	:info	:stop	nil
+11	:invoke	:cas	[2 3]
+18	:invoke	:read	nil
+30	:invoke	:cas	[3 2]
+34	:info	:cas	"indeterminate: \n"
+39	:invoke	:cas	[3 4]
+17	:ok	:read	0
+17	:invoke	:write	4
+11	:info	:cas	"indeterminate: \n"
+30	:info	:cas	"indeterminate: \n"
+18	:ok	:read	0
+35	:invoke	:read	nil
+16	:invoke	:cas	[3 0]
+18	:invoke	:write	4
+39	:info	:cas	"indeterminate: \n"
+17	:ok	:write	4
+44	:invoke	:read	nil
+17	:invoke	:read	nil
+35	:ok	:read	4
+16	:info	:cas	"indeterminate: \n"
+18	:ok	:write	4
+35	:invoke	:write	1
+21	:invoke	:read	nil
+44	:ok	:read	4
+18	:invoke	:write	4
+17	:ok	:read	4
+44	:invoke	:write	3
+17	:invoke	:write	1
+35	:ok	:write	1
+35	:invoke	:cas	[3 4]
+18	:ok	:write	4
+21	:ok	:read	4
+44	:ok	:write	3
+17	:ok	:write	1
+21	:invoke	:cas	[3 4]
+18	:invoke	:read	nil
+44	:invoke	:cas	[0 4]
+17	:invoke	:read	nil
+35	:info	:cas	"indeterminate: \n"
+40	:invoke	:read	nil
+21	:info	:cas	"indeterminate: \n"
+18	:ok	:read	1
+44	:info	:cas	"indeterminate: \n"
+17	:ok	:read	1
+26	:invoke	:cas	[3 1]
+18	:invoke	:write	3
+49	:invoke	:read	nil
+17	:invoke	:cas	[3 1]
+40	:ok	:read	1
+40	:invoke	:read	nil
+26	:info	:cas	"indeterminate: \n"
+49	:ok	:read	1
+18	:ok	:write	3
+17	:ok	:cas	[3 1]
+31	:invoke	:cas	[2 2]
+49	:invoke	:write	0
+17	:invoke	:cas	[4 4]
+18	:invoke	:read	nil
+40	:ok	:read	1
+40	:invoke	:read	nil
+31	:info	:cas	"indeterminate: \n"
+49	:ok	:write	0
+17	:info	:cas	"indeterminate: \n"
+36	:invoke	:cas	[2 1]
+18	:ok	:read	0
+22	:invoke	:write	0
+40	:ok	:read	0
+49	:invoke	:cas	[1 2]
+:nemesis	:info	:stop	{:n2 [:restarted "n2"]}
+18	:invoke	:write	1
+40	:invoke	:cas	[3 4]
+36	:info	:cas	"indeterminate: \n"
+22	:ok	:write	0
+41	:invoke	:read	nil
+49	:info	:cas	"indeterminate: \n"
+22	:invoke	:write	4
+18	:ok	:write	1
+54	:invoke	:read	nil
+40	:info	:cas	"indeterminate: \n"
+18	:invoke	:read	nil
+45	:invoke	:write	1
+41	:ok	:read	1
+41	:invoke	:write	1
+54	:ok	:read	1
+22	:ok	:write	4
+22	:invoke	:write	1
+18	:ok	:read	4
+54	:invoke	:write	3
+45	:ok	:write	1
+18	:invoke	:cas	[3 4]
+45	:invoke	:cas	[3 4]
+41	:ok	:write	1
+41	:invoke	:cas	[1 1]
+22	:ok	:write	1
+54	:ok	:write	3
+22	:invoke	:read	nil
+54	:invoke	:cas	[1 0]
+18	:ok	:cas	[3 4]
+45	:info	:cas	"indeterminate: \n"
+50	:invoke	:cas	[2 4]
+18	:invoke	:write	3
+41	:info	:cas	"indeterminate: \n"
+22	:ok	:read	4
+46	:invoke	:read	nil
+54	:info	:cas	"indeterminate: \n"
+22	:invoke	:cas	[0 4]
+50	:info	:cas	"indeterminate: \n"
+59	:invoke	:cas	[0 1]
+18	:ok	:write	3
+55	:invoke	:read	nil
+46	:ok	:read	3
+18	:invoke	:read	nil
+46	:invoke	:write	1
+22	:info	:cas	"indeterminate: \n"
+59	:info	:cas	"indeterminate: \n"
+27	:invoke	:cas	[2 2]
+64	:invoke	:cas	[0 3]
+55	:ok	:read	3
+18	:ok	:read	3
+46	:ok	:write	1
+55	:invoke	:cas	[4 1]
+18	:invoke	:read	nil
+27	:info	:cas	"indeterminate: \n"
+46	:invoke	:read	nil
+64	:info	:cas	"indeterminate: \n"
+32	:invoke	:write	2
+69	:invoke	:read	nil
+55	:info	:cas	"indeterminate: \n"
+60	:invoke	:write	3
+18	:ok	:read	1
+46	:ok	:read	1
+32	:ok	:write	2
+18	:invoke	:cas	[1 1]
+69	:ok	:read	2
+32	:invoke	:cas	[2 4]
+46	:invoke	:cas	[1 2]
+69	:invoke	:cas	[4 1]
+60	:ok	:write	3
+60	:invoke	:cas	[3 4]
+18	:info	:cas	"indeterminate: \n"
+32	:info	:cas	"indeterminate: \n"
+46	:info	:cas	"indeterminate: \n"
+23	:invoke	:read	nil
+69	:info	:cas	"indeterminate: \n"
+37	:invoke	:cas	[3 4]
+51	:invoke	:cas	[0 3]
+74	:invoke	:write	2
+60	:ok	:cas	[3 4]
+60	:invoke	:read	nil
+23	:ok	:read	4
+37	:info	:cas	"indeterminate: \n"
+74	:ok	:write	2
+51	:info	:cas	"indeterminate: \n"
+23	:invoke	:cas	[4 4]
+42	:invoke	:write	0
+74	:invoke	:write	2
+60	:ok	:read	2
+56	:invoke	:write	4
+60	:invoke	:write	0
+23	:info	:cas	"indeterminate: \n"
+42	:ok	:write	0
+74	:ok	:write	2
+28	:invoke	:cas	[3 1]
+56	:ok	:write	4
+42	:invoke	:cas	[0 4]
+74	:invoke	:cas	[0 3]
+60	:ok	:write	0
+56	:invoke	:write	3
+60	:invoke	:write	1
+28	:info	:cas	"indeterminate: \n"
+74	:ok	:cas	[0 3]
+42	:info	:cas	"indeterminate: \n"
+74	:invoke	:write	3
+56	:ok	:write	3
+33	:invoke	:write	2
+60	:ok	:write	1
+56	:invoke	:read	nil
+47	:invoke	:cas	[2 0]
+60	:invoke	:write	4
+74	:ok	:write	3
+33	:ok	:write	2
+56	:ok	:read	2
+47	:ok	:cas	[2 0]
+33	:invoke	:cas	[0 1]
+74	:invoke	:write	4
+47	:invoke	:cas	[1 0]
+60	:ok	:write	4
+56	:invoke	:cas	[1 1]
+60	:invoke	:cas	[0 2]
+33	:info	:cas	"indeterminate: \n"
+74	:ok	:write	4
+47	:info	:cas	"indeterminate: \n"
+38	:invoke	:cas	[2 1]
+56	:info	:cas	"indeterminate: \n"
+74	:invoke	:read	nil
+:nemesis	:info	:start	nil
+52	:invoke	:write	1
+60	:info	:cas	"indeterminate: \n"
+61	:invoke	:write	2
+65	:invoke	:write	1
+38	:info	:cas	"indeterminate: \n"
+74	:ok	:read	4
+74	:invoke	:cas	[2 3]
+43	:invoke	:write	0
+:nemesis	:info	:start	{:n1 [:killed "n1"], :n3 [:killed "n3"], :n2 [:killed "n2"], :n5 [:killed "n5"]}
+:nemesis	:info	:stop	nil
+52	:ok	:write	1
+61	:ok	:write	2
+65	:ok	:write	1
+61	:invoke	:cas	[2 4]
+52	:invoke	:write	0
+65	:invoke	:read	nil
+74	:info	:cas	"indeterminate: W0311 03:15:31.546497 107222 /home/zyh/Desktop/braft/example/atomic/test.cpp:195] Fail to send request to 192.168.223.132:8700:0 : [E111]Fail to connect Socket{id=34359738368 addr=192.168.223.132:8700:38792} (0x0x563800eca420): Connection refused [R1][E112]Not connected to 192.168.223.132:8700 yet, server_id=34359738368 [R2][E112]Not connected to 192.168.223.132:8700 yet, server_id=34359738368 [R3][E112]Not connected to 192.168.223.132:8700 yet, server_id=34359738368\nI0311 03:15:31.646637 107226 /home/zyh/Desktop/incubator-brpc/src/brpc/socket.cpp:2201] Checking Socket{id=34359738368 addr=192.168.223.132:8700} (0x563800eca420)\nW0311 03:15:34.548776 107222 /home/zyh/Desktop/braft/example/atomic/test.cpp:195] Fail to send request to 192.168.223.132:8700:0 : [E111]Fail to connect Socket{id=77309411328 addr=192.168.223.132:8700:38804} (0x0x563800eca420): Connection refused [R1][E112]Not connected to 192.168.223.132:8700 yet, server_id=77309411328 [R2][E112]Not connected to 192.168.223.132:8700 yet, server_id=77309411328 [R3][E112]Not connected to 192.168.223.132:8700 yet, server_id=77309411328\nI0311 03:15:34.648906 107228 /home/zyh/Desktop/incubator-brpc/src/brpc/socket.cpp:2201] Checking Socket{id=77309411328 addr=192.168.223.132:8700} (0x563800eca420)\nW0311 03:15:37.550825 107222 /home/zyh/Desktop/braft/example/atomic/test.cpp:168] Fail to refresh_leader : [192.168.223.128:8700:0] [E111]Fail to connect Socket{id=85899345920 addr=192.168.223.128:8700} (0x0x563800eca420): Connection refused [R1][E112]Not connected to 192.168.223.128:8700 yet, server_id=85899345920 [R2][E112]Not connected to 192.168.223.128:8700 yet, server_id=85899345920 [R3][E112]Not connected to 192.168.223.128:8700 yet, server_id=85899345920, [192.168.223.129:8700:1] [E111]Fail to connect Socket{id=94489280512 addr=192.168.223.129:8700} (0x0x563800eca420): Connection refused [R1][E112]Not connected to 192.168.223.129:8700 yet, server_id=94489280512 [R2][E112]Not connected to 192.168.223.129:8700 yet, server_id=94489280512 [R3][E112]Not connected to 192.168.223.129:8700 yet, server_id=94489280512, [192.168.223.130:8700:2] [E111]Fail to connect Socket{id=103079215104 addr=192.168.223.130:8700} (0x0x563800eca420): Connection refused [R1][E112]Not connected to 192.168.223.130:8700 yet, server_id=103079215104 [R2][E112]Not connected to 192.168.223.130:8700 yet, server_id=103079215104 [R3][E112]Not connected to 192.168.223.130:8700 yet, server_id=103079215104, [192.168.223.131:8700:3] [E11][127.0.1.1:8700][E11]Unknown leader, [192.168.223.132:8700:4] [E111]Fail to connect Socket{id=120259084288 addr=192.168.223.132:8700:38816} (0x0x563800eca420): Connection refused [R1][E112]Not connected to 192.168.223.132:8700 yet, server_id=120259084288 [R2][E112]Not connected to 192.168.223.132:8700 yet, server_id=120259084288 [R3][E112]Not connected to 192.168.223.132:8700 yet, server_id=120259084288\nW0311 03:15:40.553121 107222 /home/zyh/Desktop/braft/example/atomic/test.cpp:168] Fail to refresh_leader : [192.168.223.128:8700:0] [E111]Fail to connect Socket{id=128849018880 addr=192.168.223.128:8700:38816} (0x0x563800eca420): Connection refused [R1][E112]Not connected to 192.168.223.128:8700 yet, server_id=128849018880 [R2][E112]Not connected to 192.168.223.128:8700 yet, server_id=128849018880 [R3][E112]Not connected to 192.168.223.128:8700 yet, server_id=128849018880, [192.168.223.129:8700:1] [E111]Fail to connect Socket{id=137438953472 addr=192.168.223.129:8700:38816} (0x0x563800eca420): Connection refused [R1][E112]Not connected to 192.168.223.129:8700 yet, server_id=137438953472 [R2][E112]Not connected to 192.168.223.129:8700 yet, server_id=137438953472 [R3][E112]Not connected to 192.168.223.129:8700 yet, server_id=137438953472, [192.168.223.130:8700:2] [E111]Fail to connect Socket{id=146028888064 addr=192.168.223.130:8700:38816} (0x0x563800eca420): Connection refused [R1][E112]Not connected to 192.168.223.130:8700 yet, server_id=146028888064 [R2][E112]Not connected to 192.168.223.130:8700 yet, server_id=146028888064 [R3][E112]Not connected to 192.168.223.130:8700 yet, server_id=146028888064, [192.168.223.131:8700:3] [E11][127.0.1.1:8700][E11]Unknown leader, [192.168.223.132:8700:4] [E111]Fail to connect Socket{id=163208757248 addr=192.168.223.132:8700:38826} (0x0x563800eca420): Connection refused [R1][E112]Not connected to 192.168.223.132:8700 yet, server_id=163208757248 [R2][E112]Not connected to 192.168.223.132:8700 yet, server_id=163208757248 [R3][E112]Not connected to 192.168.223.132:8700 yet, server_id=163208757248\nW0311 03:15:43.555072 107222 /home/zyh/Desktop/braft/example/atomic/test.cpp:168] Fail to refresh_leader : [192.168.223.128:8700:0] [E111]Fail to connect Socket{id=171798691840 addr=192.168.223.128:8700:38826} (0x0x563800eca420): Connection refused [R1][E112]Not connected to 192.168.223.128:8700 yet, server_id=171798691840 [R2][E112]Not connected to 192.168.223.128:8700 yet, server_id=171798691840 [R3][E112]Not connected to 192.168.223.128:8700 yet, server_id=171798691840, [192.168.223.129:8700:1] [E111]Fail to connect Socket{id=180388626432 addr=192.168.223.129:8700:38826} (0x0x563800eca420): Connection refused [R1][E112]Not connected to 192.168.223.129:8700 yet, server_id=180388626432 [R2][E112]Not connected to 192.168.223.129:8700 yet, server_id=180388626432 [R3][E112]Not connected to 192.168.223.129:8700 yet, server_id=180388626432, [192.168.223.130:8700:2] [E111]Fail to connect Socket{id=188978561024 addr=192.168.223.130:8700:38826} (0x0x563800eca420): Connection refused [R1][E112]Not connected to 192.168.223.130:8700 yet, server_id=188978561024 [R2][E112]Not connected to 192.168.223.130:8700 yet, server_id=188978561024 [R3][E112]Not connected to 192.168.223.130:8700 yet, server_id=188978561024, [192.168.223.131:8700:3] [E11][127.0.1.1:8700][E11]Unknown leader, [192.168.223.132:8700:4] [E111]Fail to connect Socket{id=206158430208 addr=192.168.223.132:8700:38836} (0x0x563800eca420): Connection refused [R1][E112]Not connected to 192.168.223.132:8700 yet, server_id=206158430208 [R2][E112]Not connected to 192.168.223.132:8700 yet, server_id=206158430208 [R3][E112]Not connected to 192.168.223.132:8700 yet, server_id=206158430208\nW0311 03:15:46.556914 107222 /home/zyh/Desktop/braft/example/atomic/test.cpp:168] Fail to refresh_leader : [192.168.223.128:8700:0] [E111]Fail to connect Socket{id=214748364800 addr=192.168.223.128:8700:38836} (0x0x563800eca420): Connection refused [R1][E112]Not connected to 192.168.223.128:8700 yet, server_id=214748364800 [R2][E112]Not connected to 192.168.223.128:8700 yet, server_id=214748364800 [R3][E112]Not connected to 192.168.223.128:8700 yet, server_id=214748364800, [192.168.223.129:8700:1] [E111]Fail to connect Socket{id=223338299392 addr=192.168.223.129:8700:38836} (0x0x563800eca420): Connection refused [R1][E112]Not connected to 192.168.223.129:8700 yet, server_id=223338299392 [R2][E112]Not connected to 192.168.223.129:8700 yet, server_id=223338299392 [R3][E112]Not connected to 192.168.223.129:8700 yet, server_id=223338299392, [192.168.223.130:8700:2] [E111]Fail to connect Socket{id=231928233984 addr=192.168.223.130:8700:38836} (0x0x563800eca420): Connection refused [R1][E112]Not connected to 192.168.223.130:8700 yet, server_id=231928233984 [R2][E112]Not connected to 192.168.223.130:8700 yet, server_id=231928233984 [R3][E112]Not connected to 192.168.223.130:8700 yet, server_id=231928233984, [192.168.223.131:8700:3] [E11][127.0.1.1:8700][E11]Unknown leader, [192.168.223.132:8700:4] [E111]Fail to connect Socket{id=249108103168 addr=192.168.223.132:8700:38846} (0x0x563800eca420): Connection refused [R1][E112]Not connected to 192.168.223.132:8700 yet, server_id=249108103168 [R2][E112]Not connected to 192.168.223.132:8700 yet, server_id=249108103168 [R3][E112]Not connected to 192.168.223.132:8700 yet, server_id=249108103168\n\n"
+43	:ok	:write	0
+43	:invoke	:cas	[4 2]
+79	:invoke	:read	nil
+61	:info	:cas	"indeterminate: \n"
+52	:ok	:write	0
+65	:ok	:read	0
+65	:invoke	:write	3
+66	:invoke	:cas	[4 3]
+52	:invoke	:write	4
+43	:info	:cas	"indeterminate: \n"
+79	:ok	:read	0
+48	:invoke	:write	4
+79	:invoke	:cas	[0 0]
+65	:ok	:write	3
+52	:ok	:write	4
+66	:ok	:cas	[4 3]
+65	:invoke	:write	4
+66	:invoke	:read	nil
+52	:invoke	:write	2
+48	:ok	:write	4
+79	:info	:cas	"indeterminate: \n"
+48	:invoke	:write	3
+84	:invoke	:read	nil
+65	:ok	:write	4
+66	:ok	:read	4
+52	:ok	:write	2
+:nemesis	:info	:stop	{:n1 [:restarted "n1"], :n3 [:restarted "n3"], :n2 [:restarted "n2"], :n5 [:restarted "n5"]}
+48	:ok	:write	3
+52	:invoke	:write	1
+65	:invoke	:write	1
+66	:invoke	:read	nil
+84	:ok	:read	3
+48	:invoke	:read	nil
+84	:invoke	:write	2
+52	:ok	:write	1
+66	:ok	:read	1
+65	:ok	:write	1
+52	:invoke	:read	nil
+65	:invoke	:write	1
+48	:ok	:read	1
+84	:ok	:write	2
+66	:invoke	:read	nil
+48	:invoke	:cas	[0 1]
+84	:invoke	:read	nil
+52	:ok	:read	2
+65	:ok	:write	1
+52	:invoke	:cas	[0 4]
+66	:ok	:read	1
+48	:info	:cas	"indeterminate: \n"
+65	:invoke	:read	nil
+84	:ok	:read	1
+53	:invoke	:write	1
+66	:invoke	:cas	[2 2]
+84	:invoke	:read	nil
+52	:info	:cas	"indeterminate: \n"
+57	:invoke	:write	4
+65	:ok	:read	1
+53	:ok	:write	1
+66	:info	:cas	"indeterminate: \n"
+53	:invoke	:write	2
+84	:ok	:read	1
+65	:invoke	:cas	[3 1]
+71	:invoke	:read	nil
+84	:invoke	:read	nil
+57	:ok	:write	4
+57	:invoke	:cas	[0 2]
+53	:ok	:write	2
+65	:info	:cas	"indeterminate: \n"
+71	:ok	:read	2
+70	:invoke	:cas	[1 0]
+84	:ok	:read	2
+53	:invoke	:read	nil
+71	:invoke	:read	nil
+84	:invoke	:cas	[0 3]
+57	:info	:cas	"indeterminate: \n"
+62	:invoke	:write	1
+71	:ok	:read	2
+70	:info	:cas	"indeterminate: \n"
+53	:ok	:read	2
+71	:invoke	:write	0
+84	:info	:cas	"indeterminate: \n"
+62	:ok	:write	1
+75	:invoke	:cas	[2 3]
+53	:invoke	:read	nil
+62	:invoke	:write	3
+89	:invoke	:cas	[0 2]
+71	:ok	:write	0
+75	:info	:cas	"indeterminate: \n"
+71	:invoke	:write	2
+53	:ok	:read	0
+62	:ok	:write	3
+80	:invoke	:write	4
+89	:info	:cas	"indeterminate: \n"
+62	:invoke	:cas	[0 4]
+53	:invoke	:read	nil
+94	:invoke	:cas	[1 3]
+71	:ok	:write	2
+71	:invoke	:read	nil
+80	:ok	:write	4
+80	:invoke	:write	0
+94	:info	:cas	"indeterminate: \n"
+53	:ok	:read	4
+62	:info	:cas	"indeterminate: \n"
+99	:invoke	:cas	[0 0]
+53	:invoke	:write	0
+67	:invoke	:write	4
+71	:ok	:read	4
+80	:ok	:write	0
+71	:invoke	:cas	[2 0]
+80	:invoke	:read	nil
+99	:ok	:cas	[0 0]
+53	:ok	:write	0
+67	:ok	:write	4
+67	:invoke	:write	3
+53	:invoke	:write	3
+99	:invoke	:write	4
+71	:info	:cas	"indeterminate: \n"
+80	:ok	:read	4
+76	:invoke	:read	nil
+80	:invoke	:read	nil
+67	:ok	:write	3
+53	:ok	:write	3
+99	:ok	:write	4
+67	:invoke	:cas	[0 3]
+99	:invoke	:write	1
+53	:invoke	:cas	[2 3]
+76	:ok	:read	4
+80	:ok	:read	4
+80	:invoke	:cas	[1 3]
+76	:invoke	:read	nil
+67	:info	:cas	"indeterminate: \n"
+99	:ok	:write	1
+53	:info	:cas	"indeterminate: \n"
+72	:invoke	:cas	[0 1]
+99	:invoke	:write	4
+58	:invoke	:read	nil
+80	:ok	:cas	[1 3]
+76	:ok	:read	3
+76	:invoke	:read	nil
+80	:invoke	:cas	[2 3]
+72	:info	:cas	"indeterminate: \n"
+99	:ok	:write	4
+99	:invoke	:read	nil
+58	:ok	:read	4
+77	:invoke	:cas	[3 2]
+76	:ok	:read	4
+80	:info	:cas	"indeterminate: \n"
+58	:invoke	:read	nil
+76	:invoke	:read	nil
+85	:invoke	:write	2
+99	:ok	:read	4
+:nemesis	:info	:start	nil
+77	:info	:cas	"indeterminate: \n"
+99	:invoke	:cas	[3 1]
+82	:invoke	:cas	[1 1]
+58	:ok	:read	4
+76	:ok	:read	4
+58	:invoke	:write	3
+85	:ok	:write	2
+85	:invoke	:write	3
+76	:invoke	:write	0
+:nemesis	:info	:start	{:n4 [:killed "n4"]}
+58	:ok	:write	3
+58	:invoke	:read	nil
+85	:ok	:write	3
+76	:ok	:write	0
+85	:invoke	:read	nil
+76	:invoke	:write	4
+58	:ok	:read	0
+58	:invoke	:write	1
+85	:ok	:read	0
+76	:ok	:write	4
+85	:invoke	:cas	[4 1]
+76	:invoke	:write	3
+58	:ok	:write	1
+58	:invoke	:read	nil
+85	:info	:cas	"indeterminate: \n"
+76	:ok	:write	3
+76	:invoke	:write	2
+90	:invoke	:cas	[4 3]
+58	:ok	:read	3
+58	:invoke	:cas	[2 4]
+76	:ok	:write	2
+90	:info	:cas	"indeterminate: \n"
+76	:invoke	:write	2
+95	:invoke	:cas	[3 2]
+99	:info	:cas	"indeterminate: W0311 03:16:02.747627 108881 /home/zyh/Desktop/braft/example/atomic/test.cpp:195] Fail to send request to 192.168.223.131:8700:0 : [E111]Fail to connect Socket{id=8589934592 addr=192.168.223.131:8700:56740} (0x0x562e9e72f420): Connection refused [R1][E112]Not connected to 192.168.223.131:8700 yet, server_id=8589934592 [R2][E112]Not connected to 192.168.223.131:8700 yet, server_id=8589934592 [R3][E112]Not connected to 192.168.223.131:8700 yet, server_id=8589934592\nI0311 03:16:02.847836 108888 /home/zyh/Desktop/incubator-brpc/src/brpc/socket.cpp:2201] Checking Socket{id=8589934592 addr=192.168.223.131:8700} (0x562e9e72f420)\nW0311 03:16:05.748965 108881 /home/zyh/Desktop/braft/example/atomic/test.cpp:195] Fail to send request to 192.168.223.131:8700:0 : [E111]Fail to connect Socket{id=25769803776 addr=192.168.223.131:8700:56746} (0x0x562e9e72f420): Connection refused [R1][E112]Not connected to 192.168.223.131:8700 yet, server_id=25769803776 [R2][E112]Not connected to 192.168.223.131:8700 yet, server_id=25769803776 [R3][E112]Not connected to 192.168.223.131:8700 yet, server_id=25769803776\nI0311 03:16:05.849105 108886 /home/zyh/Desktop/incubator-brpc/src/brpc/socket.cpp:2201] Checking Socket{id=25769803776 addr=192.168.223.131:8700} (0x562e9e72f420)\nW0311 03:16:08.750636 108881 /home/zyh/Desktop/braft/example/atomic/test.cpp:195] Fail to send request to 192.168.223.131:8700:0 : [E111]Fail to connect Socket{id=42949672960 addr=192.168.223.131:8700:56752} (0x0x562e9e72f420): Connection refused [R1][E112]Not connected to 192.168.223.131:8700 yet, server_id=42949672960 [R2][E112]Not connected to 192.168.223.131:8700 yet, server_id=42949672960 [R3][E112]Not connected to 192.168.223.131:8700 yet, server_id=42949672960\nI0311 03:16:08.850929 108888 /home/zyh/Desktop/incubator-brpc/src/brpc/socket.cpp:2201] Checking Socket{id=42949672960 addr=192.168.223.131:8700} (0x562e9e72f420)\n\n"
+82	:info	:cas	"indeterminate: W0311 03:16:02.942113 104479 /home/zyh/Desktop/braft/example/atomic/test.cpp:195] Fail to send request to 192.168.223.131:8700:0 : [E111]Fail to connect Socket{id=8589934592 addr=192.168.223.131:8700:43184} (0x0x563aa044e420): Connection refused [R1][E112]Not connected to 192.168.223.131:8700 yet, server_id=8589934592 [R2][E112]Not connected to 192.168.223.131:8700 yet, server_id=8589934592 [R3][E112]Not connected to 192.168.223.131:8700 yet, server_id=8589934592\nI0311 03:16:03.042315 104488 /home/zyh/Desktop/incubator-brpc/src/brpc/socket.cpp:2201] Checking Socket{id=8589934592 addr=192.168.223.131:8700} (0x563aa044e420)\nW0311 03:16:05.943369 104479 /home/zyh/Desktop/braft/example/atomic/test.cpp:195] Fail to send request to 192.168.223.131:8700:0 : [E111]Fail to connect Socket{id=25769803776 addr=192.168.223.131:8700:43190} (0x0x563aa044e420): Connection refused [R1][E112]Not connected to 192.168.223.131:8700 yet, server_id=25769803776 [R2][E112]Not connected to 192.168.223.131:8700 yet, server_id=25769803776 [R3][E112]Not connected to 192.168.223.131:8700 yet, server_id=25769803776\nI0311 03:16:06.043570 104489 /home/zyh/Desktop/incubator-brpc/src/brpc/socket.cpp:2201] Checking Socket{id=25769803776 addr=192.168.223.131:8700} (0x563aa044e420)\nW0311 03:16:08.944523 104479 /home/zyh/Desktop/braft/example/atomic/test.cpp:195] Fail to send request to 192.168.223.131:8700:0 : [E111]Fail to connect Socket{id=42949672960 addr=192.168.223.131:8700:43196} (0x0x563aa044e420): Connection refused [R1][E112]Not connected to 192.168.223.131:8700 yet, server_id=42949672960 [R2][E112]Not connected to 192.168.223.131:8700 yet, server_id=42949672960 [R3][E112]Not connected to 192.168.223.131:8700 yet, server_id=42949672960\nI0311 03:16:09.044674 104488 /home/zyh/Desktop/incubator-brpc/src/brpc/socket.cpp:2201] Checking Socket{id=42949672960 addr=192.168.223.131:8700} (0x563aa044e420)\n\n"
+104	:invoke	:read	nil
+58	:ok	:cas	[2 4]
+87	:invoke	:read	nil
+58	:invoke	:write	0
+76	:ok	:write	2
+95	:info	:cas	"indeterminate: \n"
+76	:invoke	:write	1
+104	:ok	:read	2
+100	:invoke	:cas	[3 1]
+87	:ok	:read	2
+58	:ok	:write	0
+87	:invoke	:write	3
+104	:invoke	:read	nil
+76	:ok	:write	1
+58	:invoke	:write	0
+100	:info	:cas	"indeterminate: \n"
+76	:invoke	:read	nil
+105	:invoke	:write	0
+87	:ok	:write	3
+104	:ok	:read	3
+87	:invoke	:cas	[3 4]
+104	:invoke	:read	nil
+58	:ok	:write	0
+58	:invoke	:read	nil
+76	:ok	:read	0
+76	:invoke	:write	2
+105	:ok	:write	0
+87	:info	:cas	"indeterminate: \n"
+105	:invoke	:cas	[2 4]
+104	:ok	:read	0
+104	:invoke	:write	1
+58	:ok	:read	0
+92	:invoke	:read	nil
+76	:ok	:write	2
+58	:invoke	:read	nil
+76	:invoke	:read	nil
+105	:ok	:cas	[2 4]
+104	:ok	:write	1
+105	:invoke	:write	3
+58	:ok	:read	1
+92	:ok	:read	1
+104	:invoke	:write	1
+76	:ok	:read	1
+58	:invoke	:read	nil
+92	:invoke	:write	3
+76	:invoke	:cas	[3 2]
+105	:ok	:write	3
+104	:ok	:write	1
+105	:invoke	:cas	[3 3]
+58	:ok	:read	1
+92	:ok	:write	3
+104	:invoke	:cas	[1 3]
+58	:invoke	:read	nil
+76	:ok	:cas	[3 2]
+92	:invoke	:cas	[1 2]
+76	:invoke	:write	0
+105	:info	:cas	"indeterminate: \n"
+58	:ok	:read	2
+104	:info	:cas	"indeterminate: \n"
+110	:invoke	:cas	[3 3]
+58	:invoke	:read	nil
+109	:invoke	:read	nil
+92	:info	:cas	"indeterminate: \n"
+76	:ok	:write	0
+97	:invoke	:read	nil
+76	:invoke	:cas	[0 2]
+110	:info	:cas	"indeterminate: \n"
+58	:ok	:read	0
+109	:ok	:read	0
+115	:invoke	:read	nil
+58	:invoke	:cas	[2 2]
+97	:ok	:read	0
+76	:ok	:cas	[0 2]
+109	:invoke	:write	4
+:nemesis	:info	:stop	nil
+97	:invoke	:cas	[4 0]
+76	:invoke	:cas	[3 1]
+115	:ok	:read	2
+58	:ok	:cas	[2 2]
+109	:ok	:write	4
+58	:invoke	:cas	[0 0]
+97	:ok	:cas	[4 0]
+109	:invoke	:cas	[3 4]
+115	:invoke	:cas	[0 2]
+97	:invoke	:read	nil
+76	:info	:cas	"indeterminate: \n"
+81	:invoke	:cas	[3 1]
+58	:ok	:cas	[0 0]
+109	:info	:cas	"indeterminate: \n"
+58	:invoke	:cas	[4 0]
+115	:ok	:cas	[0 2]
+97	:ok	:read	2
+114	:invoke	:cas	[2 0]
+97	:invoke	:cas	[4 4]
+81	:info	:cas	"indeterminate: \n"
+115	:invoke	:write	0
+86	:invoke	:write	1
+58	:info	:cas	"indeterminate: \n"
+114	:ok	:cas	[2 0]
+97	:info	:cas	"indeterminate: \n"
+115	:ok	:write	0
+63	:invoke	:cas	[0 2]
+86	:ok	:write	1
+102	:invoke	:read	nil
+114	:invoke	:write	0
+115	:invoke	:read	nil
+86	:invoke	:write	4
+63	:info	:cas	"indeterminate: \n"
+102	:ok	:read	1
+68	:invoke	:read	nil
+114	:ok	:write	0
+102	:invoke	:read	nil
+115	:ok	:read	0
+114	:invoke	:write	2
+86	:ok	:write	4
+115	:invoke	:cas	[4 4]
+86	:invoke	:cas	[4 4]
+68	:ok	:read	4
+102	:ok	:read	4
+114	:ok	:write	2
+68	:invoke	:read	nil
+102	:invoke	:write	4
+115	:info	:cas	"indeterminate: \n"
+86	:info	:cas	"indeterminate: \n"
+114	:invoke	:write	3
+120	:invoke	:read	nil
+91	:invoke	:write	2
+68	:ok	:read	2
+102	:ok	:write	4
+114	:ok	:write	3
+68	:invoke	:cas	[3 4]
+102	:invoke	:read	nil
+120	:ok	:read	3
+114	:invoke	:cas	[4 3]
+91	:ok	:write	2
+91	:invoke	:write	1
+120	:invoke	:write	0
+68	:info	:cas	"indeterminate: \n"
+102	:ok	:read	2
+73	:invoke	:cas	[0 2]
+102	:invoke	:cas	[3 2]
+114	:info	:cas	"indeterminate: \n"
+:nemesis	:info	:stop	{:n4 [:restarted "n4"]}
+91	:ok	:write	1
+120	:ok	:write	0
+119	:invoke	:read	nil
+91	:invoke	:write	1
+120	:invoke	:cas	[1 1]
+73	:ok	:cas	[0 2]
+102	:info	:cas	"indeterminate: \n"
+73	:invoke	:read	nil
+107	:invoke	:write	1
+119	:ok	:read	2
+119	:invoke	:write	2
+91	:ok	:write	1
+120	:ok	:cas	[1 1]
+91	:invoke	:read	nil
+73	:ok	:read	1
+107	:ok	:write	1
+120	:invoke	:cas	[1 4]
+73	:invoke	:cas	[3 1]
+107	:invoke	:cas	[2 0]
+119	:ok	:write	2
+119	:invoke	:read	nil
+91	:ok	:read	2
+120	:info	:cas	"indeterminate: \n"
+91	:invoke	:read	nil
+107	:ok	:cas	[2 0]
+73	:info	:cas	"indeterminate: \n"
+107	:invoke	:cas	[3 1]
+119	:ok	:read	0
+125	:invoke	:read	nil
+78	:invoke	:read	nil
+119	:invoke	:cas	[3 4]
+91	:ok	:read	0
+91	:invoke	:read	nil
+107	:info	:cas	"indeterminate: \n"
+125	:ok	:read	0
+78	:ok	:read	0
+112	:invoke	:write	1
+78	:invoke	:write	3
+125	:invoke	:cas	[2 0]
+119	:info	:cas	"indeterminate: \n"
+124	:invoke	:read	nil
+91	:ok	:read	0
+112	:ok	:write	1
+91	:invoke	:read	nil
+78	:ok	:write	3
+112	:invoke	:write	4
+125	:info	:cas	"indeterminate: \n"
+124	:ok	:read	3
+124	:invoke	:write	4
+78	:invoke	:write	1
+130	:invoke	:cas	[2 2]
+91	:ok	:read	3
+112	:ok	:write	4
+91	:invoke	:cas	[0 0]
+124	:ok	:write	4
+112	:invoke	:cas	[0 3]
+130	:info	:cas	"indeterminate: \n"
+78	:ok	:write	1
+124	:invoke	:write	4
+135	:invoke	:read	nil
+78	:invoke	:write	2
+91	:info	:cas	"indeterminate: \n"
+112	:info	:cas	"indeterminate: \n"
+96	:invoke	:cas	[4 2]
+117	:invoke	:write	1
+124	:ok	:write	4
+135	:ok	:read	4
+124	:invoke	:write	3
+78	:ok	:write	2
+135	:invoke	:read	nil
+96	:info	:cas	"indeterminate: \n"
+78	:invoke	:cas	[4 3]
+117	:ok	:write	1
+101	:invoke	:write	4
+117	:invoke	:cas	[1 4]
+124	:ok	:write	3
+135	:ok	:read	3
+124	:invoke	:read	nil
+78	:info	:cas	"indeterminate: \n"
+83	:invoke	:write	2
+101	:ok	:write	4
+135	:invoke	:write	2
+117	:info	:cas	"indeterminate: \n"
+122	:invoke	:cas	[0 4]
+101	:invoke	:write	1
+124	:ok	:read	4
+124	:invoke	:read	nil
+83	:ok	:write	2
+135	:ok	:write	2
+122	:info	:cas	"indeterminate: \n"
+83	:invoke	:write	3
+101	:ok	:write	1
+127	:invoke	:cas	[1 2]
+135	:invoke	:read	nil
+124	:ok	:read	1
+101	:invoke	:read	nil
+124	:invoke	:cas	[4 3]
+83	:ok	:write	3
+127	:info	:cas	"indeterminate: \n"
+83	:invoke	:read	nil
+135	:ok	:read	3
+132	:invoke	:read	nil
+101	:ok	:read	3
+135	:invoke	:read	nil
+101	:invoke	:write	4
+124	:info	:cas	"indeterminate: \n"
+83	:ok	:read	3
+129	:invoke	:cas	[4 1]
+83	:invoke	:cas	[4 1]
+132	:ok	:read	3
+135	:ok	:read	3
+101	:ok	:write	4
+132	:invoke	:write	1
+101	:invoke	:write	0
+129	:ok	:cas	[4 1]
+135	:invoke	:cas	[4 4]
+83	:info	:cas	"indeterminate: \n"
+129	:invoke	:cas	[3 2]
+132	:ok	:write	1
+88	:invoke	:cas	[4 0]
+101	:ok	:write	0
+135	:info	:cas	"indeterminate: \n"
+132	:invoke	:write	0
+101	:invoke	:write	3
+129	:info	:cas	"indeterminate: \n"
+:nemesis	:info	:start	nil
+140	:invoke	:read	nil
+134	:invoke	:cas	[1 1]
+88	:info	:cas	"indeterminate: \n"
+93	:invoke	:cas	[1 3]
+132	:ok	:write	0
+101	:ok	:write	3
+132	:invoke	:cas	[0 0]
+140	:ok	:read	3
+134	:info	:cas	"indeterminate: \n"
+140	:invoke	:read	nil
+101	:invoke	:cas	[2 2]
+139	:invoke	:write	0
+93	:info	:cas	"indeterminate: \n"
+98	:invoke	:cas	[4 3]
+132	:info	:cas	"indeterminate: \n"
+137	:invoke	:read	nil
+101	:info	:cas	"indeterminate: \n"
+140	:ok	:read	3
+139	:ok	:write	0
+106	:invoke	:cas	[4 3]
+140	:invoke	:write	1
+139	:invoke	:read	nil
+98	:info	:cas	"indeterminate: \n"
+137	:ok	:read	0
+103	:invoke	:read	nil
+137	:invoke	:read	nil
+106	:info	:cas	"indeterminate: \n"
+140	:ok	:write	1
+139	:ok	:read	1
+111	:invoke	:cas	[2 3]
+139	:invoke	:write	1
+103	:ok	:read	1
+140	:invoke	:cas	[0 2]
+137	:ok	:read	1
+103	:invoke	:cas	[3 3]
+137	:invoke	:cas	[3 2]
+111	:info	:cas	"indeterminate: \n"
+139	:ok	:write	1
+116	:invoke	:write	1
+139	:invoke	:read	nil
+103	:info	:cas	"indeterminate: \n"
+140	:info	:cas	"indeterminate: \n"
+108	:invoke	:read	nil
+137	:info	:cas	"indeterminate: \n"
+145	:invoke	:write	2
+142	:invoke	:read	nil
+116	:ok	:write	1
+116	:invoke	:cas	[4 4]
+139	:ok	:read	1
+108	:ok	:read	1
+139	:invoke	:read	nil
+145	:ok	:write	2
+142	:ok	:read	2
+108	:invoke	:read	nil
+142	:invoke	:read	nil
+145	:invoke	:cas	[2 1]
+116	:info	:cas	"indeterminate: \n"
+139	:ok	:read	2
+121	:invoke	:cas	[1 1]
+108	:ok	:read	2
+139	:invoke	:write	0
+142	:ok	:read	2
+145	:ok	:cas	[2 1]
+108	:invoke	:write	1
+142	:invoke	:read	nil
+145	:invoke	:read	nil
+121	:ok	:cas	[1 1]
+139	:ok	:write	0
+121	:invoke	:cas	[2 1]
+108	:ok	:write	1
+139	:invoke	:cas	[2 3]
+142	:ok	:read	1
+108	:invoke	:write	1
+:nemesis	:info	:start	{:n5 [:killed "n5"], :n3 [:killed "n3"]}
+145	:ok	:read	1
+142	:invoke	:write	1
+145	:invoke	:cas	[1 4]
+121	:info	:cas	"indeterminate: \n"
+139	:info	:cas	"indeterminate: \n"
+108	:ok	:write	1
+144	:invoke	:write	1
+126	:invoke	:write	0
+142	:ok	:write	1
+142	:invoke	:read	nil
+108	:invoke	:read	nil
+145	:ok	:cas	[1 4]
+145	:invoke	:cas	[0 4]
+144	:ok	:write	1
+126	:ok	:write	0
+142	:ok	:read	0
+144	:invoke	:read	nil
+108	:ok	:read	0
+126	:invoke	:write	0
+108	:invoke	:write	1
+145	:ok	:cas	[0 4]
+142	:invoke	:write	2
+145	:invoke	:write	0
+144	:ok	:read	4
+126	:ok	:write	0
+144	:invoke	:write	1
+108	:ok	:write	1
+142	:ok	:write	2
+126	:invoke	:cas	[0 4]
+145	:ok	:write	0
+108	:invoke	:cas	[3 4]
+142	:invoke	:cas	[1 4]
+145	:invoke	:read	nil
+144	:ok	:write	1
+144	:invoke	:cas	[3 1]
+126	:info	:cas	"indeterminate: \n"
+108	:info	:cas	"indeterminate: \n"
+131	:invoke	:cas	[1 0]
+142	:ok	:cas	[1 4]
+145	:ok	:read	4
+142	:invoke	:cas	[1 2]
+144	:info	:cas	"indeterminate: \n"
+113	:invoke	:write	1
+145	:invoke	:write	4
+149	:invoke	:write	0
+131	:info	:cas	"indeterminate: \n"
+136	:invoke	:cas	[4 0]
+142	:info	:cas	"indeterminate: \n"
+113	:ok	:write	1
+147	:invoke	:write	1
+149	:ok	:write	0
+145	:ok	:write	4
+113	:invoke	:write	2
+145	:invoke	:read	nil
+136	:ok	:cas	[4 0]
+149	:invoke	:read	nil
+136	:invoke	:write	2
+147	:ok	:write	1
+113	:ok	:write	2
+145	:ok	:read	2
+147	:invoke	:read	nil
+149	:ok	:read	2
+113	:invoke	:write	3
+149	:invoke	:cas	[1 2]
+136	:ok	:write	2
+145	:invoke	:write	3
+136	:invoke	:write	1
+147	:ok	:read	2
+147	:invoke	:read	nil
+113	:ok	:write	3
+149	:info	:cas	"indeterminate: \n"
+145	:ok	:write	3
+136	:ok	:write	1
+113	:invoke	:cas	[0 2]
+154	:invoke	:read	nil
+136	:invoke	:read	nil
+145	:invoke	:cas	[3 2]
+147	:ok	:read	1
+147	:invoke	:read	nil
+113	:info	:cas	"indeterminate: \n"
+154	:ok	:read	1
+136	:ok	:read	1
+154	:invoke	:read	nil
+118	:invoke	:read	nil
+145	:info	:cas	"indeterminate: \n"
+150	:invoke	:read	nil
+136	:invoke	:write	3
+147	:ok	:read	1
+147	:invoke	:cas	[1 3]
+154	:ok	:read	1
+118	:ok	:read	1
+154	:invoke	:write	1
+150	:ok	:read	1
+118	:invoke	:cas	[2 4]
+136	:ok	:write	3
+150	:invoke	:read	nil
+136	:invoke	:read	nil
+147	:info	:cas	"indeterminate: \n"
+154	:ok	:write	1
+118	:info	:cas	"indeterminate: \n"
+152	:invoke	:write	4
+154	:invoke	:cas	[3 4]
+123	:invoke	:read	nil
+150	:ok	:read	1
+136	:ok	:read	1
+150	:invoke	:read	nil
+136	:invoke	:write	3
+152	:ok	:write	4
+154	:info	:cas	"indeterminate: \n"
+123	:ok	:read	4
+152	:invoke	:read	nil
+123	:invoke	:read	nil
+159	:invoke	:read	nil
+150	:ok	:read	4
+136	:ok	:write	3
+150	:invoke	:write	1
+136	:invoke	:read	nil
+152	:ok	:read	3
+123	:ok	:read	3
+159	:ok	:read	3
+152	:invoke	:write	1
+123	:invoke	:read	nil
+159	:invoke	:cas	[1 1]
+150	:ok	:write	1
+:nemesis	:info	:stop	nil
+136	:ok	:read	1
+152	:ok	:write	1
+159	:ok	:cas	[1 1]
+123	:ok	:read	1
+:nemesis	:info	:stop	{:n5 [:restarted "n5"], :n3 [:restarted "n3"]}
+:nemesis	:info	:stop	nil
+:nemesis	:info	:stop	:not-started
+150	:invoke	:read	nil
+150	:ok	:read	1

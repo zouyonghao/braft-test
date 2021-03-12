@@ -16,8 +16,8 @@
              [jepsen.checker.timeline :as timeline]))
 
 (def atomic-bin "atomic_server")
-(def atomic-path "/root/atomic")
-(def peers "list://n1:8700,n2:8700,n3:8700,n4:8700,n5:8700")
+(def atomic-path "/home/zyh/atomic")
+(def peers "192.168.223.128:8700:0,192.168.223.129:8700:1,192.168.223.130:8700:2,192.168.223.131:8700:3,192.168.223.132:8700:4")
 (def ip_and_port "0.0.0.0:8700")
 
 (def cas-msg-pattern
@@ -32,7 +32,7 @@
   [node]
   (info node "start atomic_server")
   (c/cd atomic-path
-      (c/exec :sh "jepsen_control.sh" "start")
+      (c/exec :bash "jepsen_control.sh" "start")
       (c/exec :sleep 5)))
 
 (defn stop!
@@ -40,7 +40,7 @@
   [node]
   (info node "stop atomic_server")
   (c/cd atomic-path
-      (c/exec :sh "jepsen_control.sh" "stop")
+      (c/exec :bash "jepsen_control.sh" "stop")
       (c/exec :sleep 5)))
 
 (defn restart!
@@ -48,7 +48,7 @@
   [node]
   (info node "restart atomic_server")
   (c/cd atomic-path
-      (c/exec :sh "jepsen_control.sh" "restart")
+      (c/exec :bash "jepsen_control.sh" "restart")
       (c/exec :sleep 5)))
 
 (defn add!
@@ -56,7 +56,7 @@
   [node]
   (info node "add atomic_server")
   (c/cd atomic-path
-      (c/exec :sh "jepsen_control.sh" "join")
+      (c/exec :bash "jepsen_control.sh" "join")
       (c/exec :sleep 5)))
 
 (defn remove!
@@ -64,7 +64,7 @@
   [node]
   (info node "remove atomic_server")
   (c/cd atomic-path
-      (c/exec :sh "jepsen_control.sh" "leave")
+      (c/exec :bash "jepsen_control.sh" "leave")
       (c/exec :sleep 5)))
 
 (defn db
@@ -240,7 +240,7 @@
                    :checker   (checker/compose {:html   timeline/html
                                                 :linear checker/linearizable})
                    :ssh {:username "root"
-                         :password "bcetest"
+                         :password "root"
                          :strict-host-key-checking "false"}}
                    opts)))
 

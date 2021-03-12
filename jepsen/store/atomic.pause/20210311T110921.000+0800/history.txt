@@ -1,0 +1,1182 @@
+1	:invoke	:write	4
+0	:invoke	:cas	[2 1]
+2	:invoke	:cas	[1 2]
+3	:invoke	:read	nil
+4	:invoke	:write	1
+1	:ok	:write	4
+0	:info	:cas	"indeterminate: W0311 03:09:27.940662 70939 /home/zyh/Desktop/braft/example/atomic/test.cpp:168] Fail to refresh_leader : [192.168.223.128:8700:0] [E11][127.0.1.1:8700][E11]Unknown leader, [192.168.223.129:8700:1] [E11][127.0.1.1:8700][E11]Unknown leader, [192.168.223.130:8700:2] [E11][127.0.1.1:8700][E11]Unknown leader, [192.168.223.131:8700:3] [E11][127.0.1.1:8700][E11]Unknown leader, [192.168.223.132:8700:4] [E11][127.0.1.1:8700][E11]Unknown leader\nW0311 03:09:30.944415 70939 /home/zyh/Desktop/braft/example/atomic/test.cpp:168] Fail to refresh_leader : [192.168.223.128:8700:0] [E11][127.0.1.1:8700][E11]Unknown leader, [192.168.223.129:8700:1] [E11][127.0.1.1:8700][E11]Unknown leader, [192.168.223.130:8700:2] [E11][127.0.1.1:8700][E11]Unknown leader, [192.168.223.131:8700:3] [E11][127.0.1.1:8700][E11]Unknown leader, [192.168.223.132:8700:4] [E11][127.0.1.1:8700][E11]Unknown leader\n\n"
+2	:info	:cas	"indeterminate: W0311 03:09:28.099503 87839 /home/zyh/Desktop/braft/example/atomic/test.cpp:168] Fail to refresh_leader : [192.168.223.128:8700:0] [E11][127.0.1.1:8700][E11]Unknown leader, [192.168.223.129:8700:1] [E11][127.0.1.1:8700][E11]Unknown leader, [192.168.223.130:8700:2] [E11][127.0.1.1:8700][E11]Unknown leader, [192.168.223.131:8700:3] [E11][127.0.1.1:8700][E11]Unknown leader, [192.168.223.132:8700:4] [E11][127.0.1.1:8700][E11]Unknown leader\nW0311 03:09:31.103061 87839 /home/zyh/Desktop/braft/example/atomic/test.cpp:168] Fail to refresh_leader : [192.168.223.128:8700:0] [E11][127.0.1.1:8700][E11]Unknown leader, [192.168.223.129:8700:1] [E11][127.0.1.1:8700][E11]Unknown leader, [192.168.223.130:8700:2] [E11][127.0.1.1:8700][E11]Unknown leader, [192.168.223.131:8700:3] [E11][127.0.1.1:8700][E11]Unknown leader, [192.168.223.132:8700:4] [E11][127.0.1.1:8700][E11]Unknown leader\n\n"
+3	:ok	:read	4
+4	:ok	:write	1
+5	:invoke	:cas	[4 1]
+1	:invoke	:read	nil
+3	:invoke	:write	3
+7	:invoke	:read	nil
+4	:invoke	:cas	[0 0]
+1	:ok	:read	1
+5	:info	:cas	"indeterminate: \n"
+3	:ok	:write	3
+7	:ok	:read	3
+4	:info	:cas	"indeterminate: \n"
+10	:invoke	:read	nil
+1	:invoke	:read	nil
+7	:invoke	:write	1
+3	:invoke	:cas	[1 2]
+9	:invoke	:cas	[3 2]
+10	:ok	:read	3
+1	:ok	:read	3
+7	:ok	:write	1
+10	:invoke	:read	nil
+1	:invoke	:read	nil
+3	:ok	:cas	[1 2]
+9	:info	:cas	"indeterminate: \n"
+14	:invoke	:write	1
+3	:invoke	:write	3
+7	:invoke	:write	2
+1	:ok	:read	2
+10	:ok	:read	2
+10	:invoke	:read	nil
+1	:invoke	:write	1
+14	:ok	:write	1
+7	:ok	:write	2
+3	:ok	:write	3
+14	:invoke	:cas	[1 4]
+7	:invoke	:read	nil
+3	:invoke	:read	nil
+10	:ok	:read	3
+1	:ok	:write	1
+:nemesis	:info	:start	nil
+10	:invoke	:read	nil
+1	:invoke	:read	nil
+14	:ok	:cas	[1 4]
+7	:ok	:read	4
+3	:ok	:read	4
+14	:invoke	:read	nil
+7	:invoke	:read	nil
+:nemesis	:info	:start	{:n1 [:paused "atomic_server"]}
+3	:invoke	:cas	[1 4]
+1	:ok	:read	4
+10	:ok	:read	4
+1	:invoke	:write	4
+14	:ok	:read	4
+7	:ok	:read	4
+10	:invoke	:write	2
+14	:invoke	:cas	[3 3]
+3	:info	:cas	"indeterminate: \n"
+7	:invoke	:read	nil
+8	:invoke	:write	0
+1	:ok	:write	4
+1	:invoke	:read	nil
+10	:ok	:write	2
+14	:info	:cas	"indeterminate: \n"
+7	:ok	:read	2
+10	:invoke	:write	0
+19	:invoke	:read	nil
+7	:invoke	:read	nil
+8	:ok	:write	0
+8	:invoke	:cas	[4 1]
+:nemesis	:info	:stop	nil
+1	:ok	:read	0
+19	:ok	:read	0
+10	:ok	:write	0
+:nemesis	:info	:stop	{:n1 [:resumed "atomic_server"]}
+8	:info	:cas	"indeterminate: \n"
+7	:ok	:read	0
+1	:invoke	:cas	[2 3]
+7	:invoke	:write	0
+13	:invoke	:write	0
+10	:invoke	:write	2
+19	:invoke	:read	nil
+1	:info	:cas	"indeterminate: \n"
+7	:ok	:write	0
+6	:invoke	:read	nil
+10	:ok	:write	2
+19	:ok	:read	2
+13	:ok	:write	0
+7	:invoke	:write	2
+10	:invoke	:cas	[1 3]
+19	:invoke	:cas	[3 4]
+13	:invoke	:write	4
+6	:ok	:read	0
+7	:ok	:write	2
+6	:invoke	:write	0
+10	:info	:cas	"indeterminate: \n"
+7	:invoke	:cas	[4 4]
+19	:info	:cas	"indeterminate: \n"
+15	:invoke	:cas	[1 4]
+13	:ok	:write	4
+24	:invoke	:cas	[2 3]
+13	:invoke	:write	3
+6	:ok	:write	0
+6	:invoke	:read	nil
+24	:info	:cas	"indeterminate: \n"
+15	:info	:cas	"indeterminate: \n"
+7	:info	:cas	"indeterminate: \n"
+13	:ok	:write	3
+12	:invoke	:read	nil
+13	:invoke	:cas	[2 2]
+29	:invoke	:cas	[2 3]
+20	:invoke	:cas	[1 0]
+6	:ok	:read	3
+6	:invoke	:write	1
+12	:ok	:read	3
+13	:info	:cas	"indeterminate: \n"
+20	:info	:cas	"indeterminate: \n"
+29	:info	:cas	"indeterminate: \n"
+12	:invoke	:read	nil
+18	:invoke	:read	nil
+25	:invoke	:read	nil
+34	:invoke	:cas	[1 0]
+6	:ok	:write	1
+6	:invoke	:read	nil
+18	:ok	:read	1
+12	:ok	:read	1
+34	:ok	:cas	[1 0]
+25	:ok	:read	0
+12	:invoke	:cas	[4 3]
+18	:invoke	:read	nil
+25	:invoke	:read	nil
+34	:invoke	:write	4
+6	:ok	:read	0
+6	:invoke	:cas	[1 3]
+12	:info	:cas	"indeterminate: \n"
+18	:ok	:read	0
+17	:invoke	:read	nil
+25	:ok	:read	0
+18	:invoke	:cas	[1 0]
+34	:ok	:write	4
+25	:invoke	:write	1
+6	:info	:cas	"indeterminate: \n"
+34	:invoke	:read	nil
+11	:invoke	:write	0
+17	:ok	:read	4
+18	:info	:cas	"indeterminate: \n"
+17	:invoke	:read	nil
+25	:ok	:write	1
+34	:ok	:read	1
+25	:invoke	:cas	[1 2]
+23	:invoke	:write	2
+11	:ok	:write	0
+34	:invoke	:read	nil
+17	:ok	:read	0
+11	:invoke	:read	nil
+17	:invoke	:cas	[0 3]
+25	:info	:cas	"indeterminate: \n"
+23	:ok	:write	2
+23	:invoke	:write	1
+30	:invoke	:read	nil
+34	:ok	:read	2
+11	:ok	:read	2
+34	:invoke	:read	nil
+17	:info	:cas	"indeterminate: \n"
+11	:invoke	:read	nil
+22	:invoke	:cas	[1 1]
+23	:ok	:write	1
+30	:ok	:read	1
+34	:ok	:read	1
+23	:invoke	:write	2
+30	:invoke	:cas	[0 2]
+11	:ok	:read	1
+22	:ok	:cas	[1 1]
+34	:invoke	:write	0
+11	:invoke	:read	nil
+22	:invoke	:cas	[0 3]
+23	:ok	:write	2
+30	:info	:cas	"indeterminate: \n"
+23	:invoke	:read	nil
+34	:ok	:write	0
+35	:invoke	:cas	[0 3]
+11	:ok	:read	0
+34	:invoke	:read	nil
+22	:ok	:cas	[0 3]
+11	:invoke	:cas	[2 3]
+22	:invoke	:write	4
+23	:ok	:read	3
+35	:info	:cas	"indeterminate: \n"
+23	:invoke	:read	nil
+34	:ok	:read	3
+11	:info	:cas	"indeterminate: \n"
+34	:invoke	:read	nil
+40	:invoke	:cas	[2 1]
+22	:ok	:write	4
+16	:invoke	:write	3
+22	:invoke	:write	2
+23	:ok	:read	4
+:nemesis	:info	:start	nil
+23	:invoke	:cas	[2 3]
+34	:ok	:read	4
+40	:info	:cas	"indeterminate: \n"
+16	:ok	:write	3
+34	:invoke	:read	nil
+22	:ok	:write	2
+16	:invoke	:write	0
+45	:invoke	:cas	[3 1]
+22	:invoke	:read	nil
+:nemesis	:info	:start	{:n5 [:paused "atomic_server"]}
+23	:info	:cas	"indeterminate: W0311 03:10:02.008303 91605 /home/zyh/Desktop/braft/example/atomic/test.cpp:195] Fail to send request to 192.168.223.132:8700:0 : [E1008]Reached timeout=3000ms @192.168.223.132:8700\n\n"
+28	:invoke	:read	nil
+34	:info	:read	"indeterminate: W0311 03:10:02.232733 94082 /home/zyh/Desktop/braft/example/atomic/test.cpp:66] Fail to send request to 192.168.223.132:8700:0 : [E1008]Reached timeout=3000ms @192.168.223.132:8700\n\n"
+16	:info	:write	"indeterminate: W0311 03:10:02.318954 91473 /home/zyh/Desktop/braft/example/atomic/test.cpp:128] Fail to send request to 192.168.223.132:8700:0 : [E1008]Reached timeout=3000ms @192.168.223.132:8700\n\n"
+45	:info	:cas	"indeterminate: W0311 03:10:02.370756 73090 /home/zyh/Desktop/braft/example/atomic/test.cpp:195] Fail to send request to 192.168.223.132:8700:0 : [E1008]Reached timeout=3000ms @192.168.223.132:8700\n\n"
+22	:info	:read	"indeterminate: W0311 03:10:02.558069 89864 /home/zyh/Desktop/braft/example/atomic/test.cpp:66] Fail to send request to 192.168.223.132:8700:0 : [E1008]Reached timeout=3000ms @192.168.223.132:8700\n\n"
+39	:invoke	:write	3
+21	:invoke	:read	nil
+50	:invoke	:cas	[3 0]
+27	:invoke	:write	4
+28	:info	:read	"indeterminate: W0311 03:10:05.858656 91702 /home/zyh/Desktop/braft/example/atomic/test.cpp:66] Fail to send request to 192.168.223.132:8700:0 : [E1008]Reached timeout=3000ms @192.168.223.132:8700\n\n"
+33	:invoke	:read	nil
+39	:info	:write	"indeterminate: W0311 03:10:05.984552 94178 /home/zyh/Desktop/braft/example/atomic/test.cpp:128] Fail to send request to 192.168.223.132:8700:0 : [E1008]Reached timeout=3000ms @192.168.223.132:8700\n\n"
+21	:info	:read	"indeterminate: W0311 03:10:06.140474 91571 /home/zyh/Desktop/braft/example/atomic/test.cpp:66] Fail to send request to 192.168.223.132:8700:0 : [E1008]Reached timeout=3000ms @192.168.223.132:8700\n\n"
+50	:info	:cas	"indeterminate: W0311 03:10:06.182739 73192 /home/zyh/Desktop/braft/example/atomic/test.cpp:195] Fail to send request to 192.168.223.132:8700:0 : [E1008]Reached timeout=3000ms @192.168.223.132:8700\n\n"
+44	:invoke	:read	nil
+27	:info	:write	"indeterminate: W0311 03:10:06.340825 89960 /home/zyh/Desktop/braft/example/atomic/test.cpp:128] Fail to send request to 192.168.223.132:8700:0 : [E1008]Reached timeout=3000ms @192.168.223.132:8700\n\n"
+55	:invoke	:cas	[0 4]
+26	:invoke	:read	nil
+32	:invoke	:read	nil
+33	:ok	:read	2
+44	:ok	:read	2
+33	:invoke	:write	2
+44	:invoke	:write	2
+26	:ok	:read	2
+55	:info	:cas	"indeterminate: \n"
+60	:invoke	:write	1
+32	:ok	:read	2
+26	:invoke	:cas	[3 1]
+32	:invoke	:read	nil
+33	:ok	:write	2
+33	:invoke	:read	nil
+44	:ok	:write	2
+60	:ok	:write	1
+44	:invoke	:cas	[3 0]
+26	:info	:cas	"indeterminate: \n"
+60	:invoke	:cas	[1 0]
+32	:ok	:read	1
+31	:invoke	:write	0
+33	:ok	:read	1
+32	:invoke	:read	nil
+33	:invoke	:read	nil
+44	:info	:cas	"indeterminate: \n"
+60	:ok	:cas	[1 0]
+49	:invoke	:cas	[4 0]
+31	:ok	:write	0
+60	:invoke	:write	1
+32	:ok	:read	0
+:nemesis	:info	:stop	nil
+33	:ok	:read	0
+31	:invoke	:read	nil
+32	:invoke	:cas	[3 3]
+49	:info	:cas	"indeterminate: \n"
+33	:invoke	:cas	[3 3]
+60	:ok	:write	1
+54	:invoke	:cas	[3 2]
+:nemesis	:info	:stop	{:n5 [:resumed "atomic_server"]}
+60	:invoke	:read	nil
+32	:info	:cas	"indeterminate: \n"
+31	:ok	:read	1
+33	:info	:cas	"indeterminate: \n"
+37	:invoke	:read	nil
+31	:invoke	:write	4
+54	:info	:cas	"indeterminate: \n"
+38	:invoke	:write	4
+59	:invoke	:cas	[2 3]
+60	:ok	:read	1
+37	:ok	:read	1
+60	:invoke	:write	2
+31	:ok	:write	4
+37	:invoke	:write	2
+38	:ok	:write	4
+59	:info	:cas	"indeterminate: \n"
+31	:invoke	:read	nil
+38	:invoke	:cas	[0 3]
+64	:invoke	:write	4
+60	:ok	:write	2
+37	:ok	:write	2
+60	:invoke	:cas	[1 3]
+31	:ok	:read	2
+37	:invoke	:read	nil
+38	:info	:cas	"indeterminate: \n"
+43	:invoke	:cas	[0 1]
+31	:invoke	:read	nil
+64	:ok	:write	4
+64	:invoke	:read	nil
+60	:info	:cas	"indeterminate: \n"
+65	:invoke	:write	1
+37	:ok	:read	4
+43	:info	:cas	"indeterminate: \n"
+31	:ok	:read	4
+37	:invoke	:cas	[1 3]
+64	:ok	:read	4
+48	:invoke	:read	nil
+31	:invoke	:write	4
+64	:invoke	:cas	[3 1]
+65	:ok	:write	1
+65	:invoke	:cas	[2 3]
+37	:ok	:cas	[1 3]
+48	:ok	:read	3
+37	:invoke	:write	4
+31	:ok	:write	4
+64	:info	:cas	"indeterminate: \n"
+48	:invoke	:read	nil
+31	:invoke	:write	3
+65	:info	:cas	"indeterminate: \n"
+69	:invoke	:read	nil
+70	:invoke	:write	3
+37	:ok	:write	4
+48	:ok	:read	4
+37	:invoke	:cas	[3 2]
+31	:ok	:write	3
+48	:invoke	:write	4
+31	:invoke	:cas	[1 0]
+69	:ok	:read	3
+70	:ok	:write	3
+69	:invoke	:cas	[3 3]
+37	:ok	:cas	[3 2]
+70	:invoke	:read	nil
+48	:ok	:write	4
+37	:invoke	:write	0
+31	:info	:cas	"indeterminate: \n"
+48	:invoke	:write	4
+69	:info	:cas	"indeterminate: \n"
+36	:invoke	:cas	[2 3]
+74	:invoke	:cas	[1 0]
+70	:ok	:read	4
+37	:ok	:write	0
+70	:invoke	:cas	[4 0]
+48	:ok	:write	4
+37	:invoke	:write	0
+48	:invoke	:cas	[2 0]
+36	:info	:cas	"indeterminate: \n"
+74	:info	:cas	"indeterminate: \n"
+79	:invoke	:write	1
+41	:invoke	:write	0
+70	:ok	:cas	[4 0]
+37	:ok	:write	0
+70	:invoke	:read	nil
+48	:info	:cas	"indeterminate: \n"
+37	:invoke	:write	0
+79	:ok	:write	1
+53	:invoke	:read	nil
+41	:ok	:write	0
+79	:invoke	:read	nil
+41	:invoke	:cas	[3 3]
+70	:ok	:read	0
+37	:ok	:write	0
+70	:invoke	:cas	[3 3]
+37	:invoke	:write	0
+53	:ok	:read	0
+53	:invoke	:write	0
+79	:ok	:read	0
+41	:info	:cas	"indeterminate: \n"
+79	:invoke	:write	0
+46	:invoke	:write	1
+37	:ok	:write	0
+70	:info	:cas	"indeterminate: \n"
+53	:ok	:write	0
+75	:invoke	:cas	[3 2]
+37	:invoke	:cas	[1 0]
+53	:invoke	:read	nil
+79	:ok	:write	0
+79	:invoke	:read	nil
+46	:ok	:write	1
+46	:invoke	:read	nil
+75	:info	:cas	"indeterminate: \n"
+37	:ok	:cas	[1 0]
+80	:invoke	:write	2
+53	:ok	:read	0
+79	:ok	:read	0
+37	:invoke	:read	nil
+53	:invoke	:write	3
+46	:ok	:read	0
+79	:invoke	:read	nil
+46	:invoke	:read	nil
+80	:ok	:write	2
+37	:ok	:read	2
+53	:ok	:write	3
+80	:invoke	:cas	[2 1]
+37	:invoke	:read	nil
+79	:ok	:read	3
+53	:invoke	:cas	[3 3]
+:nemesis	:info	:start	nil
+46	:ok	:read	3
+79	:invoke	:read	nil
+46	:invoke	:read	nil
+37	:ok	:read	3
+80	:info	:cas	"indeterminate: \n"
+85	:invoke	:read	nil
+53	:ok	:cas	[3 3]
+37	:invoke	:read	nil
+:nemesis	:info	:start	{:n3 [:paused "atomic_server"]}
+53	:invoke	:cas	[0 4]
+79	:info	:read	"indeterminate: W0311 03:10:23.192147 96002 /home/zyh/Desktop/braft/example/atomic/test.cpp:66] Fail to send request to 192.168.223.130:8700:0 : [E1008]Reached timeout=3000ms @192.168.223.130:8700\n\n"
+46	:info	:read	"indeterminate: W0311 03:10:23.388163 93210 /home/zyh/Desktop/braft/example/atomic/test.cpp:66] Fail to send request to 192.168.223.130:8700:0 : [E1008]Reached timeout=3000ms @192.168.223.130:8700\n\n"
+84	:invoke	:cas	[0 2]
+51	:invoke	:write	4
+85	:info	:read	"indeterminate: W0311 03:10:23.758307 74954 /home/zyh/Desktop/braft/example/atomic/test.cpp:66] Fail to send request to 192.168.223.130:8700:0 : [E1008]Reached timeout=3000ms @192.168.223.130:8700\n\n"
+37	:info	:read	"indeterminate: W0311 03:10:23.866980 91782 /home/zyh/Desktop/braft/example/atomic/test.cpp:66] Fail to send request to 192.168.223.130:8700:0 : [E1008]Reached timeout=3000ms @192.168.223.130:8700\n\n"
+53	:info	:cas	"indeterminate: W0311 03:10:23.988545 93531 /home/zyh/Desktop/braft/example/atomic/test.cpp:195] Fail to send request to 192.168.223.130:8700:0 : [E1008]Reached timeout=3000ms @192.168.223.130:8700\n\n"
+90	:invoke	:read	nil
+42	:invoke	:write	3
+58	:invoke	:cas	[2 0]
+84	:info	:cas	"indeterminate: W0311 03:10:26.951627 96098 /home/zyh/Desktop/braft/example/atomic/test.cpp:195] Fail to send request to 192.168.223.130:8700:0 : [E1008]Reached timeout=3000ms @192.168.223.130:8700\n\n"
+51	:info	:write	"indeterminate: W0311 03:10:27.134393 93307 /home/zyh/Desktop/braft/example/atomic/test.cpp:128] Fail to send request to 192.168.223.130:8700:0 : [E1008]Reached timeout=3000ms @192.168.223.130:8700\n\n"
+89	:invoke	:read	nil
+56	:invoke	:write	4
+90	:info	:read	"indeterminate: W0311 03:10:27.526078 75054 /home/zyh/Desktop/braft/example/atomic/test.cpp:66] Fail to send request to 192.168.223.130:8700:0 : [E1008]Reached timeout=3000ms @192.168.223.130:8700\n\n"
+42	:info	:write	"indeterminate: W0311 03:10:27.646551 91879 /home/zyh/Desktop/braft/example/atomic/test.cpp:128] Fail to send request to 192.168.223.130:8700:0 : [E1008]Reached timeout=3000ms @192.168.223.130:8700\n\n"
+95	:invoke	:cas	[1 3]
+58	:info	:cas	"indeterminate: W0311 03:10:27.720691 93628 /home/zyh/Desktop/braft/example/atomic/test.cpp:195] Fail to send request to 192.168.223.130:8700:0 : [E1008]Reached timeout=3000ms @192.168.223.130:8700\n\n"
+89	:ok	:read	3
+63	:invoke	:cas	[2 0]
+47	:invoke	:cas	[3 3]
+56	:ok	:write	4
+89	:invoke	:write	2
+56	:invoke	:write	2
+95	:info	:cas	"indeterminate: \n"
+63	:info	:cas	"indeterminate: \n"
+47	:info	:cas	"indeterminate: \n"
+100	:invoke	:read	nil
+89	:ok	:write	2
+52	:invoke	:cas	[0 1]
+68	:invoke	:write	0
+56	:ok	:write	2
+89	:invoke	:write	0
+56	:invoke	:cas	[3 3]
+100	:ok	:read	2
+52	:info	:cas	"indeterminate: \n"
+100	:invoke	:read	nil
+68	:ok	:write	0
+89	:ok	:write	0
+56	:info	:cas	"indeterminate: \n"
+68	:invoke	:cas	[0 4]
+57	:invoke	:read	nil
+61	:invoke	:write	1
+89	:invoke	:read	nil
+100	:ok	:read	0
+68	:ok	:cas	[0 4]
+57	:ok	:read	4
+:nemesis	:info	:stop	nil
+100	:invoke	:cas	[4 0]
+61	:ok	:write	1
+68	:invoke	:read	nil
+89	:ok	:read	1
+57	:invoke	:write	0
+89	:invoke	:read	nil
+61	:invoke	:read	nil
+:nemesis	:info	:stop	{:n3 [:resumed "atomic_server"]}
+57	:ok	:write	0
+100	:info	:cas	"indeterminate: \n"
+68	:ok	:read	0
+89	:ok	:read	0
+105	:invoke	:read	nil
+57	:invoke	:write	0
+61	:ok	:read	0
+68	:invoke	:write	4
+61	:invoke	:cas	[0 4]
+89	:invoke	:cas	[2 1]
+57	:ok	:write	0
+105	:ok	:read	0
+68	:ok	:write	4
+105	:invoke	:cas	[2 0]
+89	:info	:cas	"indeterminate: \n"
+57	:invoke	:read	nil
+68	:invoke	:write	2
+61	:info	:cas	"indeterminate: \n"
+94	:invoke	:cas	[3 0]
+66	:invoke	:read	nil
+105	:info	:cas	"indeterminate: \n"
+57	:ok	:read	4
+68	:ok	:write	2
+94	:info	:cas	"indeterminate: \n"
+110	:invoke	:cas	[2 3]
+66	:ok	:read	2
+68	:invoke	:read	nil
+57	:invoke	:cas	[3 3]
+99	:invoke	:cas	[0 2]
+66	:invoke	:cas	[4 0]
+110	:ok	:cas	[2 3]
+110	:invoke	:read	nil
+99	:info	:cas	"indeterminate: \n"
+68	:ok	:read	3
+57	:ok	:cas	[3 3]
+57	:invoke	:write	0
+66	:info	:cas	"indeterminate: \n"
+68	:invoke	:read	nil
+104	:invoke	:read	nil
+71	:invoke	:read	nil
+110	:ok	:read	3
+110	:invoke	:cas	[2 1]
+57	:ok	:write	0
+68	:ok	:read	0
+104	:ok	:read	0
+57	:invoke	:read	nil
+71	:ok	:read	0
+68	:invoke	:cas	[3 2]
+104	:invoke	:cas	[4 1]
+71	:invoke	:cas	[4 0]
+110	:info	:cas	"indeterminate: \n"
+57	:ok	:read	0
+57	:invoke	:cas	[1 1]
+115	:invoke	:read	nil
+68	:info	:cas	"indeterminate: \n"
+104	:info	:cas	"indeterminate: \n"
+71	:info	:cas	"indeterminate: \n"
+73	:invoke	:cas	[2 1]
+109	:invoke	:cas	[1 2]
+76	:invoke	:read	nil
+57	:info	:cas	"indeterminate: \n"
+115	:ok	:read	0
+62	:invoke	:read	nil
+115	:invoke	:write	1
+73	:info	:cas	"indeterminate: \n"
+109	:info	:cas	"indeterminate: \n"
+78	:invoke	:cas	[4 1]
+76	:ok	:read	0
+114	:invoke	:read	nil
+62	:ok	:read	0
+76	:invoke	:read	nil
+115	:ok	:write	1
+115	:invoke	:cas	[3 3]
+62	:invoke	:cas	[1 1]
+78	:info	:cas	"indeterminate: \n"
+114	:ok	:read	1
+83	:invoke	:read	nil
+76	:ok	:read	1
+114	:invoke	:read	nil
+115	:info	:cas	"indeterminate: \n"
+76	:invoke	:cas	[4 0]
+62	:ok	:cas	[1 1]
+120	:invoke	:cas	[1 3]
+62	:invoke	:read	nil
+83	:ok	:read	1
+114	:ok	:read	1
+83	:invoke	:read	nil
+76	:info	:cas	"indeterminate: \n"
+114	:invoke	:write	1
+120	:ok	:cas	[1 3]
+81	:invoke	:cas	[3 3]
+62	:ok	:read	3
+120	:invoke	:cas	[4 4]
+62	:invoke	:cas	[0 3]
+83	:ok	:read	3
+114	:ok	:write	1
+81	:info	:cas	"indeterminate: \n"
+83	:invoke	:cas	[0 0]
+114	:invoke	:read	nil
+120	:info	:cas	"indeterminate: \n"
+62	:info	:cas	"indeterminate: \n"
+86	:invoke	:cas	[1 4]
+125	:invoke	:write	1
+67	:invoke	:write	4
+83	:info	:cas	"indeterminate: \n"
+114	:ok	:read	1
+88	:invoke	:cas	[3 4]
+114	:invoke	:cas	[4 0]
+86	:ok	:cas	[1 4]
+125	:ok	:write	1
+67	:ok	:write	4
+86	:invoke	:read	nil
+125	:invoke	:read	nil
+67	:invoke	:cas	[2 1]
+88	:info	:cas	"indeterminate: \n"
+114	:ok	:cas	[4 0]
+93	:invoke	:read	nil
+86	:ok	:read	0
+114	:invoke	:cas	[1 1]
+86	:invoke	:write	0
+67	:info	:cas	"indeterminate: \n"
+125	:ok	:read	0
+72	:invoke	:write	3
+125	:invoke	:cas	[2 3]
+:nemesis	:info	:start	nil
+93	:ok	:read	0
+114	:info	:cas	"indeterminate: \n"
+86	:ok	:write	0
+93	:invoke	:read	nil
+86	:invoke	:cas	[3 1]
+72	:ok	:write	3
+119	:invoke	:read	nil
+125	:info	:cas	"indeterminate: \n"
+:nemesis	:info	:start	{:n4 [:paused "atomic_server"]}
+72	:invoke	:read	nil
+130	:invoke	:write	2
+93	:ok	:read	3
+86	:ok	:cas	[3 1]
+119	:ok	:read	1
+93	:invoke	:cas	[3 3]
+86	:invoke	:cas	[2 0]
+119	:invoke	:write	1
+72	:ok	:read	1
+130	:ok	:write	2
+72	:invoke	:cas	[4 1]
+130	:invoke	:write	2
+93	:info	:cas	"indeterminate: \n"
+86	:ok	:cas	[2 0]
+119	:ok	:write	1
+98	:invoke	:cas	[3 3]
+119	:invoke	:write	0
+86	:invoke	:read	nil
+72	:info	:cas	"indeterminate: \n"
+77	:invoke	:write	4
+130	:ok	:write	2
+98	:info	:cas	"indeterminate: \n"
+130	:invoke	:read	nil
+119	:ok	:write	0
+86	:ok	:read	0
+103	:invoke	:read	nil
+119	:invoke	:read	nil
+77	:ok	:write	4
+86	:invoke	:read	nil
+77	:invoke	:cas	[0 3]
+130	:ok	:read	4
+103	:ok	:read	4
+119	:ok	:read	4
+130	:invoke	:read	nil
+86	:ok	:read	4
+77	:info	:cas	"indeterminate: \n"
+119	:invoke	:cas	[4 1]
+103	:invoke	:cas	[3 1]
+86	:invoke	:read	nil
+82	:invoke	:read	nil
+130	:ok	:read	4
+130	:invoke	:read	nil
+119	:ok	:cas	[4 1]
+103	:info	:cas	"indeterminate: \n"
+86	:ok	:read	1
+119	:invoke	:read	nil
+82	:ok	:read	1
+108	:invoke	:cas	[4 4]
+86	:invoke	:write	2
+82	:invoke	:cas	[2 0]
+130	:ok	:read	1
+119	:ok	:read	1
+130	:invoke	:cas	[0 0]
+108	:info	:cas	"indeterminate: \n"
+86	:ok	:write	2
+119	:invoke	:cas	[3 4]
+82	:ok	:cas	[2 0]
+86	:invoke	:read	nil
+113	:invoke	:read	nil
+82	:invoke	:write	0
+130	:ok	:cas	[0 0]
+119	:info	:cas	"indeterminate: \n"
+130	:invoke	:cas	[4 1]
+124	:invoke	:read	nil
+113	:ok	:read	0
+86	:ok	:read	0
+86	:invoke	:write	4
+82	:ok	:write	0
+113	:invoke	:read	nil
+82	:invoke	:read	nil
+130	:info	:cas	"indeterminate: \n"
+135	:invoke	:write	2
+124	:ok	:read	0
+86	:ok	:write	4
+124	:invoke	:read	nil
+86	:invoke	:cas	[1 3]
+113	:ok	:read	4
+82	:ok	:read	4
+113	:invoke	:read	nil
+135	:ok	:write	2
+82	:invoke	:read	nil
+135	:invoke	:write	4
+124	:ok	:read	2
+86	:info	:cas	"indeterminate: \n"
+113	:ok	:read	2
+91	:invoke	:cas	[0 3]
+124	:invoke	:write	3
+113	:invoke	:read	nil
+82	:ok	:read	2
+82	:invoke	:write	4
+135	:ok	:write	4
+135	:invoke	:read	nil
+91	:info	:cas	"indeterminate: \n"
+124	:ok	:write	3
+113	:ok	:read	3
+96	:invoke	:read	nil
+82	:ok	:write	4
+135	:ok	:read	4
+124	:invoke	:read	nil
+82	:invoke	:read	nil
+113	:invoke	:cas	[1 2]
+135	:invoke	:read	nil
+96	:ok	:read	4
+96	:invoke	:read	nil
+82	:ok	:read	4
+124	:ok	:read	4
+113	:info	:cas	"indeterminate: \n"
+82	:invoke	:cas	[3 1]
+118	:invoke	:write	1
+124	:invoke	:read	nil
+135	:ok	:read	4
+135	:invoke	:cas	[4 1]
+96	:ok	:read	4
+96	:invoke	:cas	[1 3]
+82	:info	:cas	"indeterminate: \n"
+124	:ok	:read	4
+118	:ok	:write	1
+124	:invoke	:cas	[2 0]
+87	:invoke	:read	nil
+135	:info	:cas	"indeterminate: \n"
+118	:invoke	:read	nil
+140	:invoke	:write	4
+96	:ok	:cas	[1 3]
+:nemesis	:info	:stop	nil
+96	:invoke	:write	3
+124	:info	:cas	"indeterminate: \n"
+87	:ok	:read	3
+129	:invoke	:cas	[4 3]
+118	:ok	:read	3
+87	:invoke	:write	3
+140	:ok	:write	4
+:nemesis	:info	:stop	{:n4 [:resumed "atomic_server"]}
+140	:invoke	:cas	[3 4]
+118	:invoke	:write	3
+96	:ok	:write	3
+129	:info	:cas	"indeterminate: \n"
+96	:invoke	:cas	[3 1]
+87	:ok	:write	3
+134	:invoke	:read	nil
+87	:invoke	:cas	[2 1]
+118	:ok	:write	3
+140	:ok	:cas	[3 4]
+118	:invoke	:write	1
+96	:info	:cas	"indeterminate: \n"
+140	:invoke	:cas	[1 3]
+134	:ok	:read	4
+87	:info	:cas	"indeterminate: \n"
+134	:invoke	:read	nil
+92	:invoke	:read	nil
+101	:invoke	:read	nil
+118	:ok	:write	1
+140	:ok	:cas	[1 3]
+118	:invoke	:write	3
+134	:ok	:read	3
+140	:invoke	:cas	[4 3]
+101	:ok	:read	3
+134	:invoke	:read	nil
+92	:ok	:read	3
+101	:invoke	:write	3
+92	:invoke	:read	nil
+118	:ok	:write	3
+140	:info	:cas	"indeterminate: \n"
+134	:ok	:read	3
+145	:invoke	:cas	[1 2]
+118	:invoke	:cas	[4 0]
+101	:ok	:write	3
+92	:ok	:read	3
+134	:invoke	:cas	[1 2]
+101	:invoke	:write	0
+92	:invoke	:write	4
+145	:info	:cas	"indeterminate: \n"
+118	:info	:cas	"indeterminate: \n"
+134	:info	:cas	"indeterminate: \n"
+150	:invoke	:cas	[3 4]
+101	:ok	:write	0
+139	:invoke	:cas	[0 0]
+92	:ok	:write	4
+123	:invoke	:cas	[0 0]
+101	:invoke	:write	4
+92	:invoke	:write	2
+150	:info	:cas	"indeterminate: \n"
+139	:info	:cas	"indeterminate: \n"
+155	:invoke	:cas	[3 2]
+123	:info	:cas	"indeterminate: \n"
+101	:ok	:write	4
+92	:ok	:write	2
+144	:invoke	:read	nil
+101	:invoke	:write	2
+128	:invoke	:cas	[2 3]
+92	:invoke	:read	nil
+155	:info	:cas	"indeterminate: \n"
+160	:invoke	:write	4
+144	:ok	:read	2
+128	:ok	:cas	[2 3]
+101	:ok	:write	2
+92	:ok	:read	2
+144	:invoke	:write	0
+128	:invoke	:write	1
+101	:invoke	:read	nil
+160	:ok	:write	4
+92	:invoke	:cas	[3 1]
+160	:invoke	:cas	[1 0]
+144	:ok	:write	0
+128	:ok	:write	1
+101	:ok	:read	1
+92	:info	:cas	"indeterminate: \n"
+144	:invoke	:cas	[1 4]
+128	:invoke	:write	3
+101	:invoke	:cas	[4 1]
+160	:ok	:cas	[1 0]
+97	:invoke	:write	1
+160	:invoke	:cas	[0 4]
+144	:info	:cas	"indeterminate: \n"
+128	:ok	:write	3
+101	:info	:cas	"indeterminate: \n"
+128	:invoke	:cas	[1 4]
+149	:invoke	:cas	[2 0]
+97	:ok	:write	1
+106	:invoke	:read	nil
+160	:info	:cas	"indeterminate: \n"
+97	:invoke	:read	nil
+165	:invoke	:read	nil
+128	:ok	:cas	[1 4]
+149	:info	:cas	"indeterminate: \n"
+106	:ok	:read	4
+128	:invoke	:cas	[3 4]
+154	:invoke	:read	nil
+97	:ok	:read	4
+165	:ok	:read	4
+106	:invoke	:cas	[2 1]
+97	:invoke	:read	nil
+165	:invoke	:read	nil
+128	:info	:cas	"indeterminate: \n"
+154	:ok	:read	4
+133	:invoke	:write	0
+106	:info	:cas	"indeterminate: \n"
+97	:ok	:read	4
+154	:invoke	:write	2
+165	:ok	:read	4
+111	:invoke	:cas	[2 1]
+97	:invoke	:cas	[1 0]
+165	:invoke	:read	nil
+133	:ok	:write	0
+154	:ok	:write	2
+133	:invoke	:cas	[0 2]
+111	:ok	:cas	[2 1]
+97	:ok	:cas	[1 0]
+154	:invoke	:write	1
+165	:ok	:read	0
+111	:invoke	:write	2
+97	:invoke	:write	1
+165	:invoke	:write	0
+133	:ok	:cas	[0 2]
+:nemesis	:info	:start	nil
+154	:ok	:write	1
+133	:invoke	:read	nil
+154	:invoke	:read	nil
+111	:ok	:write	2
+97	:ok	:write	1
+165	:ok	:write	0
+111	:invoke	:cas	[3 4]
+165	:invoke	:write	2
+97	:invoke	:read	nil
+:nemesis	:info	:start	{:n2 [:paused "atomic_server"]}
+133	:ok	:read	0
+154	:ok	:read	0
+133	:invoke	:read	nil
+154	:invoke	:write	2
+111	:info	:cas	"indeterminate: \n"
+165	:ok	:write	2
+97	:ok	:read	2
+116	:invoke	:read	nil
+165	:invoke	:write	0
+133	:ok	:read	2
+97	:invoke	:read	nil
+154	:ok	:write	2
+133	:invoke	:write	3
+154	:invoke	:read	nil
+116	:ok	:read	2
+165	:ok	:write	0
+97	:ok	:read	0
+165	:invoke	:read	nil
+116	:invoke	:cas	[4 0]
+97	:invoke	:cas	[4 0]
+133	:ok	:write	3
+154	:ok	:read	3
+154	:invoke	:cas	[1 2]
+133	:invoke	:write	1
+165	:ok	:read	3
+116	:info	:cas	"indeterminate: \n"
+165	:invoke	:cas	[3 1]
+97	:info	:cas	"indeterminate: \n"
+121	:invoke	:read	nil
+102	:invoke	:write	3
+154	:info	:cas	"indeterminate: \n"
+133	:ok	:write	1
+159	:invoke	:write	1
+133	:invoke	:cas	[0 2]
+165	:info	:cas	"indeterminate: \n"
+121	:ok	:read	1
+102	:ok	:write	3
+170	:invoke	:write	0
+121	:invoke	:cas	[4 1]
+102	:invoke	:write	2
+159	:ok	:write	1
+133	:info	:cas	"indeterminate: \n"
+159	:invoke	:cas	[3 0]
+170	:ok	:write	0
+138	:invoke	:read	nil
+121	:info	:cas	"indeterminate: \n"
+170	:invoke	:write	1
+102	:ok	:write	2
+126	:invoke	:read	nil
+159	:info	:cas	"indeterminate: \n"
+102	:invoke	:write	3
+138	:ok	:read	2
+164	:invoke	:read	nil
+170	:ok	:write	1
+138	:invoke	:write	4
+126	:ok	:read	1
+170	:invoke	:read	nil
+102	:ok	:write	3
+126	:invoke	:write	0
+102	:invoke	:write	3
+164	:ok	:read	3
+138	:ok	:write	4
+138	:invoke	:write	4
+170	:ok	:read	4
+164	:invoke	:cas	[1 1]
+126	:ok	:write	0
+170	:invoke	:read	nil
+126	:invoke	:cas	[0 1]
+102	:ok	:write	3
+102	:invoke	:write	0
+138	:ok	:write	4
+164	:info	:cas	"indeterminate: \n"
+169	:invoke	:cas	[0 0]
+138	:invoke	:read	nil
+170	:ok	:read	4
+126	:info	:cas	"indeterminate: \n"
+170	:invoke	:read	nil
+102	:ok	:write	0
+131	:invoke	:write	1
+102	:invoke	:read	nil
+169	:ok	:cas	[0 0]
+138	:ok	:read	0
+169	:invoke	:cas	[0 2]
+138	:invoke	:read	nil
+170	:ok	:read	0
+131	:ok	:write	1
+102	:ok	:read	1
+170	:invoke	:write	0
+102	:invoke	:cas	[3 4]
+131	:invoke	:read	nil
+169	:info	:cas	"indeterminate: \n"
+138	:ok	:read	1
+174	:invoke	:write	4
+138	:invoke	:write	3
+170	:ok	:write	0
+102	:info	:cas	"indeterminate: \n"
+131	:ok	:read	0
+131	:invoke	:cas	[0 3]
+107	:invoke	:cas	[3 3]
+170	:invoke	:read	nil
+174	:ok	:write	4
+138	:ok	:write	3
+174	:invoke	:cas	[3 2]
+138	:invoke	:cas	[1 0]
+131	:info	:cas	"indeterminate: \n"
+170	:ok	:read	3
+107	:ok	:cas	[3 3]
+136	:invoke	:cas	[2 3]
+170	:invoke	:write	1
+107	:invoke	:cas	[2 3]
+174	:ok	:cas	[3 2]
+138	:info	:cas	"indeterminate: \n"
+143	:invoke	:cas	[4 1]
+174	:invoke	:cas	[0 4]
+136	:ok	:cas	[2 3]
+170	:ok	:write	1
+107	:info	:cas	"indeterminate: \n"
+136	:invoke	:read	nil
+170	:invoke	:read	nil
+112	:invoke	:read	nil
+143	:info	:cas	"indeterminate: \n"
+174	:info	:cas	"indeterminate: \n"
+179	:invoke	:read	nil
+148	:invoke	:cas	[3 0]
+:nemesis	:info	:stop	nil
+136	:ok	:read	1
+170	:ok	:read	1
+112	:ok	:read	1
+136	:invoke	:write	2
+170	:invoke	:write	1
+112	:invoke	:write	0
+179	:ok	:read	1
+148	:info	:cas	"indeterminate: \n"
+:nemesis	:info	:stop	{:n2 [:resumed "atomic_server"]}
+179	:invoke	:cas	[2 0]
+153	:invoke	:read	nil
+136	:ok	:write	2
+112	:ok	:write	0
+170	:ok	:write	1
+136	:invoke	:write	1
+112	:invoke	:write	2
+170	:invoke	:write	2
+179	:info	:cas	"indeterminate: \n"
+153	:ok	:read	1
+184	:invoke	:write	4
+136	:ok	:write	1
+153	:invoke	:cas	[2 2]
+112	:ok	:write	2
+136	:invoke	:cas	[3 3]
+170	:ok	:write	2
+184	:ok	:write	4
+112	:invoke	:read	nil
+170	:invoke	:read	nil
+153	:info	:cas	"indeterminate: \n"
+184	:invoke	:cas	[2 1]
+158	:invoke	:read	nil
+136	:info	:cas	"indeterminate: \n"
+141	:invoke	:read	nil
+112	:ok	:read	4
+170	:ok	:read	4
+184	:info	:cas	"indeterminate: \n"
+112	:invoke	:write	0
+170	:invoke	:read	nil
+158	:ok	:read	4
+189	:invoke	:read	nil
+158	:invoke	:read	nil
+141	:ok	:read	4
+141	:invoke	:read	nil
+112	:ok	:write	0
+189	:ok	:read	0
+112	:invoke	:cas	[3 4]
+170	:ok	:read	0
+158	:ok	:read	0
+189	:invoke	:read	nil
+141	:ok	:read	0
+170	:invoke	:write	1
+158	:invoke	:cas	[0 2]
+141	:invoke	:read	nil
+112	:info	:cas	"indeterminate: \n"
+189	:ok	:read	0
+117	:invoke	:read	nil
+158	:ok	:cas	[0 2]
+141	:ok	:read	2
+189	:invoke	:write	2
+170	:ok	:write	1
+158	:invoke	:write	2
+141	:invoke	:write	4
+170	:invoke	:read	nil
+117	:ok	:read	1
+117	:invoke	:cas	[4 2]
+189	:ok	:write	2
+158	:ok	:write	2
+141	:ok	:write	4
+189	:invoke	:write	2
+170	:ok	:read	4
+158	:invoke	:read	nil
+170	:invoke	:write	1
+141	:invoke	:read	nil
+117	:ok	:cas	[4 2]
+117	:invoke	:read	nil
+189	:ok	:write	2
+158	:ok	:read	2
+189	:invoke	:read	nil
+141	:ok	:read	2
+170	:ok	:write	1
+158	:invoke	:write	4
+141	:invoke	:write	0
+170	:invoke	:cas	[4 4]
+117	:ok	:read	1
+189	:ok	:read	1
+117	:invoke	:write	2
+189	:invoke	:write	3
+158	:ok	:write	4
+141	:ok	:write	0
+158	:invoke	:read	nil
+170	:info	:cas	"indeterminate: \n"
+141	:invoke	:read	nil
+175	:invoke	:cas	[3 0]
+117	:ok	:write	2
+189	:ok	:write	3
+117	:invoke	:read	nil
+158	:ok	:read	3
+189	:invoke	:cas	[3 4]
+141	:ok	:read	3
+175	:ok	:cas	[3 0]
+141	:invoke	:write	4
+158	:invoke	:write	2
+117	:ok	:read	0
+175	:invoke	:read	nil
+189	:info	:cas	"indeterminate: \n"
+117	:invoke	:write	4
+194	:invoke	:read	nil
+141	:ok	:write	4
+158	:ok	:write	2
+175	:ok	:read	2
+141	:invoke	:read	nil
+158	:invoke	:write	3
+175	:invoke	:read	nil
+117	:ok	:write	4
+194	:ok	:read	4
+117	:invoke	:read	nil
+194	:invoke	:write	1
+141	:ok	:read	4
+175	:ok	:read	4
+141	:invoke	:cas	[0 3]
+158	:ok	:write	3
+117	:ok	:read	3
+158	:invoke	:read	nil
+194	:ok	:write	1
+175	:invoke	:read	nil
+194	:invoke	:read	nil
+117	:invoke	:write	4
+141	:info	:cas	"indeterminate: \n"
+146	:invoke	:read	nil
+158	:ok	:read	1
+175	:ok	:read	1
+194	:ok	:read	1
+158	:invoke	:read	nil
+117	:ok	:write	4
+:nemesis	:info	:start	nil
+175	:invoke	:cas	[4 3]
+194	:invoke	:write	2
+117	:invoke	:write	4
+146	:ok	:read	4
+146	:invoke	:read	nil
+158	:ok	:read	4
+:nemesis	:info	:start	{:n5 [:paused "atomic_server"]}
+175	:ok	:cas	[4 3]
+158	:invoke	:cas	[4 2]
+175	:invoke	:write	4
+117	:ok	:write	4
+194	:ok	:write	2
+117	:invoke	:read	nil
+146	:ok	:read	2
+194	:invoke	:cas	[3 3]
+158	:info	:cas	"indeterminate: \n"
+146	:invoke	:read	nil
+175	:ok	:write	4
+163	:invoke	:cas	[3 3]
+117	:ok	:read	4
+175	:invoke	:read	nil
+194	:info	:cas	"indeterminate: \n"
+199	:invoke	:cas	[0 4]
+146	:ok	:read	4
+117	:invoke	:read	nil
+146	:invoke	:read	nil
+163	:info	:cas	"indeterminate: \n"
+168	:invoke	:cas	[4 4]
+175	:ok	:read	4
+117	:ok	:read	4
+199	:info	:cas	"indeterminate: \n"
+146	:ok	:read	4
+175	:invoke	:read	nil
+204	:invoke	:write	2
+117	:invoke	:read	nil
+146	:invoke	:cas	[3 0]
+168	:ok	:cas	[4 4]
+168	:invoke	:write	0
+204	:ok	:write	2
+175	:ok	:read	2
+117	:ok	:read	2
+146	:info	:cas	"indeterminate: \n"
+175	:invoke	:cas	[1 4]
+151	:invoke	:read	nil
+204	:invoke	:cas	[4 0]
+168	:ok	:write	0
+117	:invoke	:read	nil
+168	:invoke	:cas	[3 4]
+175	:info	:cas	"indeterminate: \n"
+151	:ok	:read	0
+204	:info	:cas	"indeterminate: \n"
+117	:ok	:read	0
+168	:info	:cas	"indeterminate: \n"
+:nemesis	:info	:stop	nil
+:nemesis	:info	:stop	{:n5 [:resumed "atomic_server"]}
+:nemesis	:info	:stop	nil
+:nemesis	:info	:stop	:not-started
+180	:invoke	:read	nil
+180	:ok	:read	0

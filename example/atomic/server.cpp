@@ -23,6 +23,7 @@
 #include <braft/raft.h>
 #include <braft/util.h>
 #include <braft/storage.h>
+#include <butil/endpoint.h>
 
 #include "atomic.pb.h"
 
@@ -39,6 +40,8 @@ DEFINE_int32(snapshot_interval, 30, "Interval between each snapshot");
 DEFINE_string(conf, "", "Initial configuration of the replication group");
 DEFINE_string(data_path, "./data", "Path of data stored on");
 DEFINE_string(group, "Atomic", "Id of the replication group");
+
+DEFINE_string(ip, "localhost", "Ip port str");
 
 namespace example {
 
@@ -91,7 +94,13 @@ public:
 
     // Starts this node
     int start() {
-        butil::EndPoint addr(butil::my_ip(), FLAGS_port);
+        butil::EndPoint addr;
+        if (str2endpoint(FLAGS_ip.c_str(), FLAGS_port, &addr) != 0) {
+            LOG(ERROR) << "Fail to parse endpoint `" << FLAGS_ip << FLAGS_port << '\'';
+            return -1;
+        }
+        LOG(ERROR) << FLAGS_ip << " " << FLAGS_port << '\'';
+        LOG(ERROR) << addr.ip << " " << addr.port << '\'';
         braft::NodeOptions node_options;
         if (node_options.initial_conf.parse_from(FLAGS_conf) != 0) {
             LOG(ERROR) << "Fail to parse configuration `" << FLAGS_conf << '\'';

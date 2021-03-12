@@ -1,0 +1,1436 @@
+0	:invoke	:read	nil
+1	:invoke	:read	nil
+2	:invoke	:write	0
+3	:invoke	:cas	[3 1]
+4	:invoke	:cas	[4 2]
+0	:ok	:read	0
+2	:ok	:write	0
+3	:info	:cas	"indeterminate: W0311 03:02:50.255680 76018 /home/zyh/Desktop/braft/example/atomic/test.cpp:168] Fail to refresh_leader : [192.168.223.128:8700:0] [E11][127.0.1.1:8700][E11]Unknown leader, [192.168.223.129:8700:1] [E11][127.0.1.1:8700][E11]Unknown leader, [192.168.223.130:8700:2] [E11][127.0.1.1:8700][E11]Unknown leader, [192.168.223.131:8700:3] [E11][127.0.1.1:8700][E11]Unknown leader, [192.168.223.132:8700:4] [E11][127.0.1.1:8700][E11]Unknown leader\nW0311 03:02:53.259565 76018 /home/zyh/Desktop/braft/example/atomic/test.cpp:168] Fail to refresh_leader : [192.168.223.128:8700:0] [E11][127.0.1.1:8700][E11]Unknown leader, [192.168.223.129:8700:1] [E11][127.0.1.1:8700][E11]Unknown leader, [192.168.223.130:8700:2] [E11][127.0.1.1:8700][E11]Unknown leader, [192.168.223.131:8700:3] [E11][127.0.1.1:8700][E11]Unknown leader, [192.168.223.132:8700:4] [E11][127.0.1.1:8700][E11]Unknown leader\n\n"
+1	:ok	:read	0
+2	:invoke	:write	0
+0	:invoke	:read	nil
+1	:invoke	:write	4
+4	:info	:cas	"indeterminate: W0311 03:02:50.297356 77395 /home/zyh/Desktop/braft/example/atomic/test.cpp:168] Fail to refresh_leader : [192.168.223.128:8700:0] [E11][127.0.1.1:8700][E11]Unknown leader, [192.168.223.129:8700:1] [E11][127.0.1.1:8700][E11]Unknown leader, [192.168.223.130:8700:2] [E11][127.0.1.1:8700][E11]Unknown leader, [192.168.223.131:8700:3] [E11][127.0.1.1:8700][E11]Unknown leader, [192.168.223.132:8700:4] [E11][127.0.1.1:8700][E11]Unknown leader\nW0311 03:02:53.301699 77395 /home/zyh/Desktop/braft/example/atomic/test.cpp:168] Fail to refresh_leader : [192.168.223.128:8700:0] [E11][127.0.1.1:8700][E11]Unknown leader, [192.168.223.129:8700:1] [E11][127.0.1.1:8700][E11]Unknown leader, [192.168.223.130:8700:2] [E11][127.0.1.1:8700][E11]Unknown leader, [192.168.223.131:8700:3] [E11][127.0.1.1:8700][E11]Unknown leader, [192.168.223.132:8700:4] [E11][127.0.1.1:8700][E11]Unknown leader\n\n"
+8	:invoke	:read	nil
+9	:invoke	:write	0
+2	:ok	:write	0
+1	:ok	:write	4
+8	:ok	:read	4
+0	:ok	:read	4
+2	:invoke	:write	4
+9	:ok	:write	0
+0	:invoke	:read	nil
+8	:invoke	:read	nil
+1	:invoke	:write	3
+9	:invoke	:cas	[1 4]
+2	:ok	:write	4
+0	:ok	:read	4
+1	:ok	:write	3
+2	:invoke	:cas	[4 3]
+8	:ok	:read	3
+9	:info	:cas	"indeterminate: \n"
+1	:invoke	:write	3
+0	:invoke	:write	4
+8	:invoke	:cas	[2 3]
+14	:invoke	:write	1
+2	:info	:cas	"indeterminate: \n"
+7	:invoke	:cas	[0 0]
+1	:ok	:write	3
+8	:info	:cas	"indeterminate: \n"
+0	:ok	:write	4
+14	:ok	:write	1
+1	:invoke	:cas	[3 2]
+13	:invoke	:read	nil
+14	:invoke	:cas	[2 2]
+0	:invoke	:read	nil
+7	:info	:cas	"indeterminate: \n"
+:nemesis	:info	:start	nil
+12	:invoke	:write	0
+1	:info	:cas	"indeterminate: \n"
+14	:info	:cas	"indeterminate: \n"
+13	:ok	:read	1
+6	:invoke	:write	0
+0	:ok	:read	1
+13	:invoke	:read	nil
+19	:invoke	:write	4
+:nemesis	:info	:start	"crashed: java.util.concurrent.ExecutionException: java.lang.RuntimeException: jepsen_control.sh: line 6: log: Is a directory\njepsen_control.sh: line 76: ./braft_cli: No such file or directory\n\nremove atomic_server 192.168.223.132:8700\n"
+12	:ok	:write	0
+0	:invoke	:cas	[4 4]
+12	:invoke	:read	nil
+6	:ok	:write	0
+13	:ok	:read	0
+19	:ok	:write	4
+6	:invoke	:write	1
+13	:invoke	:read	nil
+0	:ok	:cas	[4 4]
+19	:invoke	:read	nil
+0	:invoke	:cas	[1 3]
+12	:ok	:read	4
+12	:invoke	:read	nil
+6	:ok	:write	1
+13	:ok	:read	1
+19	:ok	:read	1
+13	:invoke	:cas	[0 2]
+0	:ok	:cas	[1 3]
+6	:invoke	:cas	[0 0]
+19	:invoke	:cas	[2 1]
+12	:ok	:read	3
+0	:invoke	:write	3
+12	:invoke	:read	nil
+13	:info	:cas	"indeterminate: \n"
+6	:info	:cas	"indeterminate: \n"
+19	:info	:cas	"indeterminate: \n"
+18	:invoke	:write	2
+24	:invoke	:write	0
+11	:invoke	:cas	[4 1]
+0	:ok	:write	3
+0	:invoke	:cas	[0 2]
+12	:ok	:read	3
+12	:invoke	:write	0
+18	:ok	:write	2
+11	:info	:cas	"indeterminate: \n"
+24	:ok	:write	0
+18	:invoke	:read	nil
+24	:invoke	:cas	[1 0]
+0	:ok	:cas	[0 2]
+16	:invoke	:cas	[4 1]
+12	:ok	:write	0
+0	:invoke	:read	nil
+12	:invoke	:cas	[3 4]
+18	:ok	:read	0
+24	:info	:cas	"indeterminate: \n"
+18	:invoke	:write	2
+16	:info	:cas	"indeterminate: \n"
+29	:invoke	:cas	[1 1]
+0	:ok	:read	0
+21	:invoke	:write	4
+12	:info	:cas	"indeterminate: \n"
+17	:invoke	:read	nil
+0	:invoke	:cas	[3 3]
+18	:ok	:write	2
+29	:info	:cas	"indeterminate: \n"
+18	:invoke	:cas	[3 2]
+21	:ok	:write	4
+34	:invoke	:write	2
+21	:invoke	:cas	[4 1]
+17	:ok	:read	4
+0	:info	:cas	"indeterminate: \n"
+17	:invoke	:read	nil
+5	:invoke	:read	nil
+18	:info	:cas	"indeterminate: \n"
+34	:ok	:write	2
+21	:info	:cas	"indeterminate: \n"
+23	:invoke	:read	nil
+34	:invoke	:write	4
+26	:invoke	:read	nil
+17	:ok	:read	2
+5	:ok	:read	2
+17	:invoke	:read	nil
+23	:ok	:read	2
+34	:ok	:write	4
+5	:invoke	:cas	[3 3]
+26	:ok	:read	4
+34	:invoke	:cas	[1 2]
+23	:invoke	:cas	[0 0]
+26	:invoke	:cas	[1 1]
+17	:ok	:read	4
+17	:invoke	:write	3
+5	:info	:cas	"indeterminate: \n"
+34	:info	:cas	"indeterminate: \n"
+10	:invoke	:write	0
+23	:info	:cas	"indeterminate: \n"
+26	:info	:cas	"indeterminate: \n"
+39	:invoke	:cas	[0 2]
+17	:ok	:write	3
+28	:invoke	:write	3
+31	:invoke	:cas	[3 2]
+17	:invoke	:read	nil
+10	:ok	:write	0
+39	:ok	:cas	[0 2]
+10	:invoke	:write	2
+31	:info	:cas	"indeterminate: \n"
+28	:ok	:write	3
+39	:invoke	:read	nil
+17	:ok	:read	3
+28	:invoke	:cas	[0 4]
+36	:invoke	:read	nil
+17	:invoke	:cas	[4 3]
+10	:ok	:write	2
+39	:ok	:read	2
+10	:invoke	:write	4
+39	:invoke	:read	nil
+28	:info	:cas	"indeterminate: \n"
+36	:ok	:read	2
+17	:info	:cas	"indeterminate: \n"
+33	:invoke	:read	nil
+22	:invoke	:write	3
+36	:invoke	:read	nil
+10	:ok	:write	4
+39	:ok	:read	4
+10	:invoke	:cas	[4 1]
+39	:invoke	:write	2
+33	:ok	:read	4
+22	:ok	:write	3
+36	:ok	:read	3
+33	:invoke	:cas	[4 4]
+22	:invoke	:cas	[1 3]
+10	:info	:cas	"indeterminate: \n"
+36	:invoke	:cas	[1 4]
+39	:ok	:write	2
+:nemesis	:info	:stop	nil
+15	:invoke	:cas	[4 3]
+39	:invoke	:read	nil
+33	:info	:cas	"indeterminate: \n"
+22	:info	:cas	"indeterminate: \n"
+27	:invoke	:cas	[1 3]
+38	:invoke	:cas	[4 4]
+36	:info	:cas	"indeterminate: \n"
+:nemesis	:info	:stop	"crashed: java.util.concurrent.ExecutionException: java.lang.RuntimeException: jepsen_control.sh: line 6: log: Is a directory\njepsen_control.sh: line 72: ./braft_cli: No such file or directory\n\nadd atomic_server 192.168.223.132:8700\n"
+15	:info	:cas	"indeterminate: \n"
+41	:invoke	:read	nil
+39	:ok	:read	2
+20	:invoke	:read	nil
+27	:info	:cas	"indeterminate: \n"
+39	:invoke	:cas	[4 0]
+38	:info	:cas	"indeterminate: \n"
+32	:invoke	:write	4
+43	:invoke	:cas	[4 1]
+41	:ok	:read	2
+20	:ok	:read	2
+41	:invoke	:cas	[2 3]
+20	:invoke	:cas	[0 2]
+39	:info	:cas	"indeterminate: \n"
+44	:invoke	:cas	[1 3]
+32	:ok	:write	4
+43	:ok	:cas	[4 1]
+32	:invoke	:write	1
+41	:info	:cas	"indeterminate: \n"
+43	:invoke	:write	4
+20	:info	:cas	"indeterminate: \n"
+44	:ok	:cas	[1 3]
+46	:invoke	:write	3
+25	:invoke	:read	nil
+32	:ok	:write	1
+44	:invoke	:cas	[2 1]
+32	:invoke	:cas	[1 4]
+43	:ok	:write	4
+46	:ok	:write	3
+43	:invoke	:cas	[3 0]
+25	:ok	:read	3
+46	:invoke	:write	0
+44	:info	:cas	"indeterminate: \n"
+25	:invoke	:write	1
+32	:info	:cas	"indeterminate: \n"
+49	:invoke	:cas	[2 3]
+43	:ok	:cas	[3 0]
+37	:invoke	:write	4
+46	:ok	:write	0
+43	:invoke	:write	0
+25	:ok	:write	1
+46	:invoke	:cas	[4 4]
+25	:invoke	:cas	[3 4]
+49	:info	:cas	"indeterminate: \n"
+37	:ok	:write	4
+54	:invoke	:write	0
+43	:ok	:write	0
+37	:invoke	:write	3
+46	:info	:cas	"indeterminate: \n"
+25	:info	:cas	"indeterminate: \n"
+43	:invoke	:read	nil
+30	:invoke	:write	0
+51	:invoke	:write	0
+54	:ok	:write	0
+54	:invoke	:read	nil
+37	:ok	:write	3
+37	:invoke	:write	0
+43	:ok	:read	3
+30	:ok	:write	0
+51	:ok	:write	0
+43	:invoke	:cas	[4 4]
+54	:ok	:read	0
+30	:invoke	:read	nil
+51	:invoke	:cas	[3 3]
+54	:invoke	:write	2
+37	:ok	:write	0
+37	:invoke	:cas	[1 1]
+43	:info	:cas	"indeterminate: \n"
+30	:ok	:read	0
+51	:info	:cas	"indeterminate: \n"
+48	:invoke	:cas	[2 1]
+30	:invoke	:write	2
+54	:ok	:write	2
+54	:invoke	:write	3
+56	:invoke	:cas	[1 2]
+37	:info	:cas	"indeterminate: \n"
+42	:invoke	:read	nil
+48	:ok	:cas	[2 1]
+30	:ok	:write	2
+54	:ok	:write	3
+56	:info	:cas	"indeterminate: \n"
+54	:invoke	:write	0
+48	:invoke	:read	nil
+61	:invoke	:write	2
+30	:invoke	:write	1
+42	:ok	:read	3
+42	:invoke	:write	0
+54	:ok	:write	0
+48	:ok	:read	0
+54	:invoke	:write	1
+48	:invoke	:write	1
+61	:ok	:write	2
+30	:ok	:write	1
+42	:ok	:write	0
+30	:invoke	:cas	[1 3]
+61	:invoke	:read	nil
+42	:invoke	:read	nil
+54	:ok	:write	1
+48	:ok	:write	1
+54	:invoke	:write	1
+30	:ok	:cas	[1 3]
+61	:ok	:read	3
+48	:invoke	:read	nil
+42	:ok	:read	3
+30	:invoke	:read	nil
+61	:invoke	:cas	[3 0]
+54	:ok	:write	1
+42	:invoke	:write	4
+54	:invoke	:cas	[1 2]
+48	:ok	:read	1
+48	:invoke	:read	nil
+61	:info	:cas	"indeterminate: \n"
+30	:ok	:read	1
+42	:ok	:write	4
+30	:invoke	:cas	[4 2]
+66	:invoke	:cas	[2 3]
+42	:invoke	:read	nil
+54	:info	:cas	"indeterminate: \n"
+48	:ok	:read	4
+59	:invoke	:write	2
+48	:invoke	:write	0
+66	:info	:cas	"indeterminate: \n"
+30	:ok	:cas	[4 2]
+42	:ok	:read	2
+:nemesis	:info	:start	nil
+:nemesis	:info	:start	"nemesis already disrupting (:n5)"
+71	:invoke	:write	2
+42	:invoke	:cas	[4 2]
+30	:invoke	:cas	[4 1]
+59	:ok	:write	2
+48	:ok	:write	0
+59	:invoke	:read	nil
+48	:invoke	:write	0
+71	:ok	:write	2
+71	:invoke	:write	4
+42	:info	:cas	"indeterminate: \n"
+30	:info	:cas	"indeterminate: \n"
+47	:invoke	:read	nil
+59	:ok	:read	2
+35	:invoke	:write	0
+48	:ok	:write	0
+59	:invoke	:cas	[4 4]
+71	:ok	:write	4
+48	:invoke	:cas	[3 2]
+47	:ok	:read	4
+71	:invoke	:read	nil
+35	:ok	:write	0
+47	:invoke	:cas	[2 0]
+35	:invoke	:write	3
+59	:info	:cas	"indeterminate: \n"
+64	:invoke	:cas	[0 3]
+48	:info	:cas	"indeterminate: \n"
+71	:ok	:read	0
+53	:invoke	:write	1
+47	:info	:cas	"indeterminate: \n"
+35	:ok	:write	3
+71	:invoke	:cas	[2 0]
+64	:info	:cas	"indeterminate: \n"
+52	:invoke	:cas	[4 4]
+35	:invoke	:read	nil
+53	:ok	:write	1
+69	:invoke	:read	nil
+53	:invoke	:read	nil
+71	:info	:cas	"indeterminate: \n"
+52	:info	:cas	"indeterminate: \n"
+76	:invoke	:cas	[3 4]
+57	:invoke	:read	nil
+35	:ok	:read	1
+69	:ok	:read	1
+53	:ok	:read	1
+35	:invoke	:write	1
+69	:invoke	:cas	[3 4]
+53	:invoke	:cas	[3 2]
+76	:info	:cas	"indeterminate: \n"
+57	:ok	:read	1
+81	:invoke	:read	nil
+57	:invoke	:write	0
+35	:ok	:write	1
+69	:info	:cas	"indeterminate: \n"
+35	:invoke	:write	0
+53	:info	:cas	"indeterminate: \n"
+81	:ok	:read	1
+74	:invoke	:read	nil
+58	:invoke	:cas	[3 0]
+81	:invoke	:read	nil
+57	:ok	:write	0
+57	:invoke	:read	nil
+35	:ok	:write	0
+35	:invoke	:write	2
+74	:ok	:read	0
+58	:info	:cas	"indeterminate: \n"
+81	:ok	:read	0
+63	:invoke	:cas	[2 0]
+74	:invoke	:write	1
+81	:invoke	:cas	[0 4]
+57	:ok	:read	0
+35	:ok	:write	2
+57	:invoke	:write	4
+35	:invoke	:read	nil
+63	:ok	:cas	[2 0]
+81	:ok	:cas	[0 4]
+74	:ok	:write	1
+63	:invoke	:write	2
+57	:ok	:write	4
+74	:invoke	:write	3
+81	:invoke	:read	nil
+57	:invoke	:cas	[1 3]
+35	:ok	:read	4
+35	:invoke	:cas	[1 3]
+63	:ok	:write	2
+74	:ok	:write	3
+57	:info	:cas	"indeterminate: \n"
+81	:ok	:read	3
+74	:invoke	:write	4
+63	:invoke	:read	nil
+62	:invoke	:write	2
+81	:invoke	:cas	[4 2]
+35	:info	:cas	"indeterminate: \n"
+40	:invoke	:read	nil
+74	:ok	:write	4
+63	:ok	:read	4
+62	:ok	:write	2
+81	:info	:cas	"indeterminate: \n"
+74	:invoke	:cas	[1 2]
+86	:invoke	:cas	[3 0]
+63	:invoke	:cas	[4 3]
+62	:invoke	:cas	[4 0]
+40	:ok	:read	2
+40	:invoke	:cas	[2 2]
+74	:info	:cas	"indeterminate: \n"
+86	:info	:cas	"indeterminate: \n"
+63	:info	:cas	"indeterminate: \n"
+62	:info	:cas	"indeterminate: \n"
+79	:invoke	:write	2
+91	:invoke	:read	nil
+68	:invoke	:cas	[3 3]
+67	:invoke	:write	1
+40	:ok	:cas	[2 2]
+40	:invoke	:cas	[0 2]
+79	:ok	:write	2
+91	:ok	:read	2
+79	:invoke	:write	3
+68	:info	:cas	"indeterminate: \n"
+67	:ok	:write	1
+91	:invoke	:cas	[2 1]
+73	:invoke	:read	nil
+67	:invoke	:write	4
+40	:info	:cas	"indeterminate: \n"
+79	:ok	:write	3
+:nemesis	:info	:stop	nil
+45	:invoke	:cas	[1 2]
+91	:info	:cas	"indeterminate: \n"
+79	:invoke	:cas	[1 3]
+96	:invoke	:cas	[2 0]
+73	:ok	:read	3
+67	:ok	:write	4
+67	:invoke	:write	1
+73	:invoke	:cas	[4 3]
+:nemesis	:info	:stop	"crashed: java.util.concurrent.ExecutionException: java.lang.RuntimeException: jepsen_control.sh: line 6: log: Is a directory\njepsen_control.sh: line 72: ./braft_cli: No such file or directory\n\nadd atomic_server 192.168.223.132:8700\n"
+45	:info	:cas	"indeterminate: \n"
+79	:info	:cas	"indeterminate: \n"
+96	:info	:cas	"indeterminate: \n"
+84	:invoke	:write	4
+67	:ok	:write	1
+50	:invoke	:cas	[3 1]
+73	:info	:cas	"indeterminate: \n"
+101	:invoke	:read	nil
+78	:invoke	:cas	[4 4]
+67	:invoke	:write	2
+84	:ok	:write	4
+50	:info	:cas	"indeterminate: \n"
+101	:ok	:read	4
+78	:ok	:cas	[4 4]
+55	:invoke	:read	nil
+84	:invoke	:cas	[3 1]
+101	:invoke	:write	1
+67	:ok	:write	2
+78	:invoke	:write	0
+67	:invoke	:read	nil
+84	:info	:cas	"indeterminate: \n"
+55	:ok	:read	2
+101	:ok	:write	1
+55	:invoke	:write	2
+89	:invoke	:read	nil
+78	:ok	:write	0
+67	:ok	:read	0
+67	:invoke	:cas	[4 1]
+101	:invoke	:read	nil
+78	:invoke	:write	3
+89	:ok	:read	0
+55	:ok	:write	2
+67	:info	:cas	"indeterminate: \n"
+101	:ok	:read	2
+55	:invoke	:read	nil
+89	:invoke	:read	nil
+78	:ok	:write	3
+72	:invoke	:cas	[4 2]
+101	:invoke	:cas	[4 2]
+78	:invoke	:write	3
+55	:ok	:read	3
+89	:ok	:read	3
+55	:invoke	:read	nil
+72	:info	:cas	"indeterminate: \n"
+89	:invoke	:write	0
+101	:info	:cas	"indeterminate: \n"
+77	:invoke	:read	nil
+78	:ok	:write	3
+106	:invoke	:write	0
+78	:invoke	:read	nil
+55	:ok	:read	3
+89	:ok	:write	0
+89	:invoke	:cas	[2 1]
+55	:invoke	:write	3
+77	:ok	:read	0
+106	:ok	:write	0
+77	:invoke	:cas	[1 2]
+78	:ok	:read	0
+106	:invoke	:read	nil
+78	:invoke	:write	0
+89	:info	:cas	"indeterminate: \n"
+55	:ok	:write	3
+55	:invoke	:write	4
+77	:info	:cas	"indeterminate: \n"
+94	:invoke	:read	nil
+106	:ok	:read	3
+82	:invoke	:write	4
+78	:ok	:write	0
+78	:invoke	:read	nil
+106	:invoke	:read	nil
+55	:ok	:write	4
+94	:ok	:read	4
+82	:ok	:write	4
+94	:invoke	:write	3
+55	:invoke	:read	nil
+82	:invoke	:write	3
+78	:ok	:read	4
+106	:ok	:read	4
+106	:invoke	:read	nil
+78	:invoke	:write	4
+94	:ok	:write	3
+82	:ok	:write	3
+55	:ok	:read	3
+94	:invoke	:read	nil
+55	:invoke	:cas	[1 0]
+82	:invoke	:cas	[2 4]
+106	:ok	:read	3
+78	:ok	:write	4
+106	:invoke	:cas	[4 4]
+78	:invoke	:write	1
+94	:ok	:read	4
+94	:invoke	:write	2
+55	:info	:cas	"indeterminate: \n"
+82	:info	:cas	"indeterminate: \n"
+87	:invoke	:read	nil
+60	:invoke	:write	2
+106	:ok	:cas	[4 4]
+78	:ok	:write	1
+106	:invoke	:cas	[1 1]
+94	:ok	:write	2
+78	:invoke	:read	nil
+94	:invoke	:write	2
+87	:ok	:read	2
+60	:ok	:write	2
+106	:info	:cas	"indeterminate: \n"
+60	:invoke	:write	2
+87	:invoke	:cas	[2 2]
+111	:invoke	:read	nil
+78	:ok	:read	2
+94	:ok	:write	2
+94	:invoke	:cas	[3 2]
+78	:invoke	:write	2
+60	:ok	:write	2
+87	:ok	:cas	[2 2]
+111	:ok	:read	2
+60	:invoke	:cas	[2 4]
+87	:invoke	:cas	[2 1]
+111	:invoke	:cas	[1 3]
+94	:info	:cas	"indeterminate: \n"
+78	:ok	:write	2
+99	:invoke	:read	nil
+78	:invoke	:read	nil
+:nemesis	:info	:start	nil
+:nemesis	:info	:start	"nemesis already disrupting (:n5)"
+60	:ok	:cas	[2 4]
+111	:info	:cas	"indeterminate: \n"
+87	:info	:cas	"indeterminate: \n"
+92	:invoke	:cas	[4 1]
+60	:invoke	:cas	[4 1]
+116	:invoke	:read	nil
+99	:ok	:read	4
+78	:ok	:read	4
+99	:invoke	:cas	[0 3]
+78	:invoke	:cas	[2 2]
+92	:ok	:cas	[4 1]
+116	:ok	:read	1
+60	:info	:cas	"indeterminate: \n"
+92	:invoke	:cas	[1 4]
+65	:invoke	:read	nil
+116	:invoke	:read	nil
+99	:info	:cas	"indeterminate: \n"
+78	:info	:cas	"indeterminate: \n"
+83	:invoke	:read	nil
+104	:invoke	:read	nil
+92	:ok	:cas	[1 4]
+65	:ok	:read	4
+116	:ok	:read	4
+65	:invoke	:write	3
+92	:invoke	:read	nil
+83	:ok	:read	4
+116	:invoke	:write	1
+104	:ok	:read	4
+104	:invoke	:write	4
+83	:invoke	:write	3
+65	:ok	:write	3
+92	:ok	:read	3
+65	:invoke	:read	nil
+116	:ok	:write	1
+92	:invoke	:write	4
+104	:ok	:write	4
+83	:ok	:write	3
+116	:invoke	:write	4
+104	:invoke	:write	3
+83	:invoke	:cas	[0 4]
+65	:ok	:read	3
+92	:ok	:write	4
+65	:invoke	:write	0
+92	:invoke	:write	1
+116	:ok	:write	4
+104	:ok	:write	3
+83	:info	:cas	"indeterminate: \n"
+116	:invoke	:write	4
+104	:invoke	:cas	[3 0]
+65	:ok	:write	0
+88	:invoke	:read	nil
+92	:ok	:write	1
+65	:invoke	:write	4
+92	:invoke	:write	1
+116	:ok	:write	4
+104	:info	:cas	"indeterminate: \n"
+116	:invoke	:read	nil
+88	:ok	:read	4
+109	:invoke	:write	3
+65	:ok	:write	4
+88	:invoke	:write	4
+65	:invoke	:cas	[1 0]
+92	:ok	:write	1
+116	:ok	:read	1
+92	:invoke	:cas	[1 2]
+116	:invoke	:read	nil
+109	:ok	:write	3
+109	:invoke	:write	2
+88	:ok	:write	4
+65	:info	:cas	"indeterminate: \n"
+88	:invoke	:read	nil
+92	:info	:cas	"indeterminate: \n"
+70	:invoke	:read	nil
+116	:ok	:read	4
+116	:invoke	:cas	[4 4]
+97	:invoke	:cas	[3 0]
+109	:ok	:write	2
+88	:ok	:read	2
+109	:invoke	:cas	[3 1]
+70	:ok	:read	2
+116	:info	:cas	"indeterminate: \n"
+88	:invoke	:write	2
+70	:invoke	:read	nil
+97	:info	:cas	"indeterminate: \n"
+102	:invoke	:write	0
+121	:invoke	:write	3
+109	:info	:cas	"indeterminate: \n"
+114	:invoke	:write	3
+88	:ok	:write	2
+70	:ok	:read	2
+102	:ok	:write	0
+88	:invoke	:cas	[1 2]
+121	:ok	:write	3
+102	:invoke	:read	nil
+70	:invoke	:cas	[1 0]
+114	:ok	:write	3
+121	:invoke	:read	nil
+114	:invoke	:read	nil
+88	:info	:cas	"indeterminate: \n"
+102	:ok	:read	3
+93	:invoke	:read	nil
+102	:invoke	:cas	[2 3]
+70	:info	:cas	"indeterminate: \n"
+121	:ok	:read	3
+75	:invoke	:write	1
+121	:invoke	:cas	[3 3]
+114	:ok	:read	3
+114	:invoke	:read	nil
+93	:ok	:read	3
+102	:info	:cas	"indeterminate: \n"
+93	:invoke	:read	nil
+121	:ok	:cas	[3 3]
+75	:ok	:write	1
+107	:invoke	:cas	[2 1]
+114	:ok	:read	1
+121	:invoke	:cas	[2 0]
+75	:invoke	:write	4
+114	:invoke	:write	1
+93	:ok	:read	1
+107	:info	:cas	"indeterminate: \n"
+93	:invoke	:cas	[3 4]
+121	:info	:cas	"indeterminate: \n"
+114	:ok	:write	1
+112	:invoke	:write	2
+75	:ok	:write	4
+:nemesis	:info	:stop	nil
+126	:invoke	:cas	[3 2]
+114	:invoke	:write	2
+75	:invoke	:write	2
+93	:info	:cas	"indeterminate: \n"
+112	:ok	:write	2
+:nemesis	:info	:stop	"crashed: java.util.concurrent.ExecutionException: java.lang.RuntimeException: jepsen_control.sh: line 6: log: Is a directory\njepsen_control.sh: line 72: ./braft_cli: No such file or directory\n\nadd atomic_server 192.168.223.132:8700\n"
+126	:info	:cas	"indeterminate: \n"
+98	:invoke	:cas	[1 3]
+112	:invoke	:cas	[1 2]
+114	:ok	:write	2
+75	:ok	:write	2
+131	:invoke	:cas	[4 1]
+75	:invoke	:cas	[4 3]
+114	:invoke	:read	nil
+98	:info	:cas	"indeterminate: \n"
+112	:info	:cas	"indeterminate: \n"
+103	:invoke	:write	2
+131	:info	:cas	"indeterminate: \n"
+117	:invoke	:cas	[0 2]
+114	:ok	:read	2
+75	:info	:cas	"indeterminate: \n"
+136	:invoke	:read	nil
+114	:invoke	:read	nil
+80	:invoke	:write	0
+103	:ok	:write	2
+117	:info	:cas	"indeterminate: \n"
+103	:invoke	:read	nil
+136	:ok	:read	2
+122	:invoke	:read	nil
+114	:ok	:read	2
+80	:ok	:write	0
+114	:invoke	:cas	[2 0]
+136	:invoke	:write	3
+80	:invoke	:cas	[2 2]
+103	:ok	:read	0
+103	:invoke	:read	nil
+122	:ok	:read	0
+122	:invoke	:read	nil
+114	:info	:cas	"indeterminate: \n"
+80	:info	:cas	"indeterminate: \n"
+119	:invoke	:read	nil
+136	:ok	:write	3
+136	:invoke	:write	0
+103	:ok	:read	3
+85	:invoke	:write	2
+122	:ok	:read	3
+103	:invoke	:cas	[3 1]
+122	:invoke	:cas	[0 4]
+119	:ok	:read	3
+136	:ok	:write	0
+119	:invoke	:cas	[0 2]
+85	:ok	:write	2
+85	:invoke	:read	nil
+136	:invoke	:write	2
+103	:info	:cas	"indeterminate: \n"
+122	:info	:cas	"indeterminate: \n"
+108	:invoke	:read	nil
+127	:invoke	:read	nil
+119	:info	:cas	"indeterminate: \n"
+124	:invoke	:write	1
+136	:ok	:write	2
+85	:ok	:read	2
+85	:invoke	:cas	[0 3]
+136	:invoke	:cas	[4 2]
+108	:ok	:read	2
+127	:ok	:read	2
+108	:invoke	:read	nil
+127	:invoke	:cas	[1 0]
+124	:ok	:write	1
+124	:invoke	:cas	[4 2]
+85	:info	:cas	"indeterminate: \n"
+136	:info	:cas	"indeterminate: \n"
+90	:invoke	:read	nil
+141	:invoke	:write	3
+108	:ok	:read	1
+127	:ok	:cas	[1 0]
+108	:invoke	:read	nil
+124	:info	:cas	"indeterminate: \n"
+127	:invoke	:cas	[4 1]
+141	:ok	:write	3
+90	:ok	:read	3
+129	:invoke	:cas	[1 3]
+108	:ok	:read	3
+90	:invoke	:read	nil
+141	:invoke	:write	2
+127	:info	:cas	"indeterminate: \n"
+108	:invoke	:write	0
+132	:invoke	:cas	[0 0]
+129	:info	:cas	"indeterminate: \n"
+134	:invoke	:read	nil
+141	:ok	:write	2
+90	:ok	:read	2
+141	:invoke	:cas	[4 0]
+108	:ok	:write	0
+90	:invoke	:write	3
+132	:ok	:cas	[0 0]
+132	:invoke	:write	4
+108	:invoke	:cas	[3 2]
+134	:ok	:read	0
+141	:info	:cas	"indeterminate: \n"
+134	:invoke	:cas	[1 3]
+90	:ok	:write	3
+132	:ok	:write	4
+146	:invoke	:cas	[0 1]
+90	:invoke	:read	nil
+108	:info	:cas	"indeterminate: \n"
+132	:invoke	:read	nil
+113	:invoke	:read	nil
+134	:info	:cas	"indeterminate: \n"
+139	:invoke	:cas	[3 0]
+146	:info	:cas	"indeterminate: \n"
+90	:ok	:read	4
+132	:ok	:read	4
+151	:invoke	:cas	[0 4]
+90	:invoke	:cas	[0 2]
+113	:ok	:read	4
+132	:invoke	:read	nil
+139	:info	:cas	"indeterminate: \n"
+113	:invoke	:read	nil
+151	:info	:cas	"indeterminate: \n"
+144	:invoke	:read	nil
+90	:info	:cas	"indeterminate: \n"
+156	:invoke	:write	3
+132	:ok	:read	4
+95	:invoke	:write	2
+132	:invoke	:read	nil
+113	:ok	:read	4
+144	:ok	:read	4
+113	:invoke	:write	1
+156	:ok	:write	3
+144	:invoke	:write	4
+:nemesis	:info	:start	nil
+:nemesis	:info	:start	"nemesis already disrupting (:n5)"
+156	:invoke	:read	nil
+95	:ok	:write	2
+132	:ok	:read	2
+95	:invoke	:cas	[3 3]
+113	:ok	:write	1
+132	:invoke	:cas	[3 2]
+144	:ok	:write	4
+113	:invoke	:read	nil
+156	:ok	:read	4
+144	:invoke	:read	nil
+156	:invoke	:read	nil
+95	:info	:cas	"indeterminate: \n"
+132	:info	:cas	"indeterminate: \n"
+100	:invoke	:read	nil
+137	:invoke	:write	3
+113	:ok	:read	4
+144	:ok	:read	4
+156	:ok	:read	4
+113	:invoke	:cas	[4 0]
+144	:invoke	:read	nil
+156	:invoke	:cas	[3 1]
+100	:ok	:read	4
+137	:ok	:write	3
+100	:invoke	:write	1
+137	:invoke	:cas	[4 4]
+113	:info	:cas	"indeterminate: \n"
+144	:ok	:read	3
+156	:ok	:cas	[3 1]
+118	:invoke	:cas	[2 0]
+144	:invoke	:cas	[2 2]
+156	:invoke	:read	nil
+100	:ok	:write	1
+137	:info	:cas	"indeterminate: \n"
+142	:invoke	:write	1
+100	:invoke	:read	nil
+118	:info	:cas	"indeterminate: \n"
+144	:info	:cas	"indeterminate: \n"
+123	:invoke	:read	nil
+156	:ok	:read	1
+149	:invoke	:read	nil
+142	:ok	:write	1
+156	:invoke	:read	nil
+100	:ok	:read	1
+142	:invoke	:read	nil
+123	:ok	:read	1
+100	:invoke	:read	nil
+149	:ok	:read	1
+123	:invoke	:cas	[2 2]
+156	:ok	:read	1
+149	:invoke	:cas	[1 0]
+156	:invoke	:write	0
+142	:ok	:read	1
+142	:invoke	:read	nil
+100	:ok	:read	1
+123	:info	:cas	"indeterminate: \n"
+100	:invoke	:cas	[4 3]
+149	:ok	:cas	[1 0]
+128	:invoke	:cas	[2 0]
+156	:ok	:write	0
+142	:ok	:read	0
+156	:invoke	:read	nil
+149	:invoke	:write	4
+142	:invoke	:cas	[3 1]
+100	:info	:cas	"indeterminate: \n"
+128	:info	:cas	"indeterminate: \n"
+105	:invoke	:read	nil
+133	:invoke	:read	nil
+156	:ok	:read	0
+142	:info	:cas	"indeterminate: \n"
+149	:ok	:write	4
+156	:invoke	:read	nil
+149	:invoke	:write	3
+147	:invoke	:write	1
+105	:ok	:read	4
+133	:ok	:read	4
+156	:ok	:read	4
+105	:invoke	:write	4
+133	:invoke	:cas	[3 0]
+149	:ok	:write	3
+147	:ok	:write	1
+156	:invoke	:read	nil
+149	:invoke	:read	nil
+147	:invoke	:read	nil
+105	:ok	:write	4
+133	:info	:cas	"indeterminate: \n"
+105	:invoke	:read	nil
+156	:ok	:read	4
+138	:invoke	:write	2
+149	:ok	:read	4
+156	:invoke	:read	nil
+149	:invoke	:write	4
+147	:ok	:read	4
+147	:invoke	:read	nil
+105	:ok	:read	4
+138	:ok	:write	2
+105	:invoke	:write	0
+156	:ok	:read	2
+138	:invoke	:write	3
+149	:ok	:write	4
+156	:invoke	:read	nil
+149	:invoke	:cas	[3 3]
+147	:ok	:read	4
+147	:invoke	:read	nil
+105	:ok	:write	0
+138	:ok	:write	3
+156	:ok	:read	3
+105	:invoke	:cas	[4 3]
+149	:ok	:cas	[3 3]
+138	:invoke	:write	1
+149	:invoke	:cas	[1 4]
+156	:invoke	:cas	[4 4]
+147	:ok	:read	3
+105	:info	:cas	"indeterminate: \n"
+138	:ok	:write	1
+147	:invoke	:write	4
+149	:ok	:cas	[1 4]
+156	:ok	:cas	[4 4]
+138	:invoke	:read	nil
+110	:invoke	:write	3
+149	:invoke	:cas	[3 0]
+156	:invoke	:write	0
+147	:ok	:write	4
+:nemesis	:info	:stop	nil
+147	:invoke	:cas	[4 1]
+138	:ok	:read	4
+110	:ok	:write	3
+156	:ok	:write	0
+110	:invoke	:cas	[4 4]
+138	:invoke	:read	nil
+149	:info	:cas	"indeterminate: \n"
+156	:invoke	:read	nil
+154	:invoke	:cas	[1 3]
+:nemesis	:info	:stop	"crashed: java.util.concurrent.ExecutionException: java.lang.RuntimeException: jepsen_control.sh: line 6: log: Is a directory\njepsen_control.sh: line 72: ./braft_cli: No such file or directory\n\nadd atomic_server 192.168.223.132:8700\n"
+147	:info	:cas	"indeterminate: \n"
+152	:invoke	:cas	[0 0]
+110	:info	:cas	"indeterminate: \n"
+138	:ok	:read	0
+156	:ok	:read	0
+154	:info	:cas	"indeterminate: \n"
+115	:invoke	:write	4
+138	:invoke	:write	3
+156	:invoke	:cas	[4 4]
+152	:ok	:cas	[0 0]
+159	:invoke	:write	4
+152	:invoke	:write	1
+115	:ok	:write	4
+156	:ok	:cas	[4 4]
+138	:ok	:write	3
+159	:ok	:write	4
+115	:invoke	:cas	[2 3]
+156	:invoke	:write	0
+152	:ok	:write	1
+138	:invoke	:write	3
+159	:invoke	:cas	[1 2]
+152	:invoke	:cas	[3 0]
+156	:ok	:write	0
+115	:info	:cas	"indeterminate: \n"
+138	:ok	:write	3
+120	:invoke	:cas	[1 0]
+159	:info	:cas	"indeterminate: \n"
+138	:invoke	:read	nil
+152	:ok	:cas	[3 0]
+156	:invoke	:cas	[2 3]
+164	:invoke	:cas	[0 3]
+152	:invoke	:write	0
+120	:info	:cas	"indeterminate: \n"
+138	:ok	:read	0
+156	:info	:cas	"indeterminate: \n"
+125	:invoke	:read	nil
+138	:invoke	:write	2
+161	:invoke	:read	nil
+164	:ok	:cas	[0 3]
+152	:ok	:write	0
+164	:invoke	:write	3
+152	:invoke	:write	4
+125	:ok	:read	0
+138	:ok	:write	2
+161	:ok	:read	2
+138	:invoke	:read	nil
+125	:invoke	:read	nil
+161	:invoke	:read	nil
+164	:ok	:write	3
+152	:ok	:write	4
+164	:invoke	:write	2
+152	:invoke	:cas	[4 4]
+138	:ok	:read	4
+125	:ok	:read	4
+161	:ok	:read	4
+138	:invoke	:read	nil
+161	:invoke	:read	nil
+125	:invoke	:write	2
+164	:ok	:write	2
+152	:info	:cas	"indeterminate: \n"
+164	:invoke	:read	nil
+157	:invoke	:cas	[4 1]
+138	:ok	:read	2
+161	:ok	:read	2
+138	:invoke	:read	nil
+125	:ok	:write	2
+161	:invoke	:cas	[4 0]
+164	:ok	:read	2
+157	:info	:cas	"indeterminate: \n"
+125	:invoke	:read	nil
+162	:invoke	:cas	[0 4]
+164	:invoke	:read	nil
+138	:ok	:read	2
+161	:info	:cas	"indeterminate: \n"
+138	:invoke	:read	nil
+125	:ok	:read	2
+166	:invoke	:read	nil
+162	:info	:cas	"indeterminate: \n"
+164	:ok	:read	2
+125	:invoke	:write	0
+164	:invoke	:read	nil
+167	:invoke	:cas	[0 0]
+138	:ok	:read	2
+166	:ok	:read	2
+166	:invoke	:write	1
+138	:invoke	:read	nil
+125	:ok	:write	0
+164	:ok	:read	0
+167	:ok	:cas	[0 0]
+125	:invoke	:write	2
+164	:invoke	:read	nil
+167	:invoke	:cas	[4 0]
+166	:ok	:write	1
+138	:ok	:read	1
+166	:invoke	:write	0
+138	:invoke	:read	nil
+125	:ok	:write	2
+164	:ok	:read	2
+167	:info	:cas	"indeterminate: \n"
+125	:invoke	:cas	[2 1]
+164	:invoke	:write	0
+172	:invoke	:write	2
+166	:ok	:write	0
+166	:invoke	:read	nil
+138	:ok	:read	0
+138	:invoke	:cas	[3 3]
+125	:info	:cas	"indeterminate: \n"
+164	:ok	:write	0
+172	:ok	:write	2
+130	:invoke	:cas	[4 0]
+172	:invoke	:write	2
+164	:invoke	:read	nil
+166	:ok	:read	2
+138	:info	:cas	"indeterminate: \n"
+166	:invoke	:cas	[4 4]
+143	:invoke	:read	nil
+130	:info	:cas	"indeterminate: \n"
+172	:ok	:write	2
+164	:ok	:read	2
+135	:invoke	:write	1
+172	:invoke	:cas	[3 3]
+166	:info	:cas	"indeterminate: \n"
+164	:invoke	:read	nil
+:nemesis	:info	:start	nil
+:nemesis	:info	:start	"nemesis already disrupting (:n5)"
+171	:invoke	:cas	[2 0]
+143	:ok	:read	2
+143	:invoke	:read	nil
+172	:info	:cas	"indeterminate: \n"
+135	:ok	:write	1
+164	:ok	:read	1
+177	:invoke	:read	nil
+171	:info	:cas	"indeterminate: \n"
+135	:invoke	:write	1
+164	:invoke	:cas	[1 3]
+143	:ok	:read	1
+176	:invoke	:read	nil
+177	:ok	:read	1
+143	:invoke	:write	1
+177	:invoke	:read	nil
+135	:ok	:write	1
+164	:ok	:cas	[1 3]
+135	:invoke	:cas	[4 4]
+176	:ok	:read	3
+164	:invoke	:read	nil
+176	:invoke	:write	0
+143	:ok	:write	1
+177	:ok	:read	1
+143	:invoke	:write	4
+177	:invoke	:cas	[1 0]
+135	:info	:cas	"indeterminate: \n"
+164	:ok	:read	1
+176	:ok	:write	0
+164	:invoke	:write	3
+140	:invoke	:read	nil
+143	:ok	:write	4
+177	:info	:cas	"indeterminate: \n"
+176	:invoke	:read	nil
+143	:invoke	:cas	[4 4]
+182	:invoke	:write	3
+164	:ok	:write	3
+140	:ok	:read	3
+164	:invoke	:cas	[0 4]
+176	:ok	:read	3
+140	:invoke	:write	3
+143	:info	:cas	"indeterminate: \n"
+176	:invoke	:read	nil
+182	:ok	:write	3
+148	:invoke	:write	2
+164	:info	:cas	"indeterminate: \n"
+182	:invoke	:write	0
+140	:ok	:write	3
+169	:invoke	:write	2
+176	:ok	:read	3
+176	:invoke	:cas	[3 1]
+140	:invoke	:read	nil
+148	:ok	:write	2
+182	:ok	:write	0
+148	:invoke	:cas	[3 0]
+182	:invoke	:write	0
+169	:ok	:write	2
+169	:invoke	:write	2
+176	:info	:cas	"indeterminate: \n"
+140	:ok	:read	2
+148	:info	:cas	"indeterminate: \n"
+181	:invoke	:read	nil
+140	:invoke	:read	nil
+182	:ok	:write	0
+153	:invoke	:write	0
+182	:invoke	:write	0
+169	:ok	:write	2
+169	:invoke	:write	2
+181	:ok	:read	2
+153	:ok	:write	0
+140	:ok	:read	0
+181	:invoke	:write	4
+182	:ok	:write	0
+153	:invoke	:read	nil
+140	:invoke	:write	4
+182	:invoke	:cas	[4 1]
+169	:ok	:write	2
+169	:invoke	:read	nil
+181	:ok	:write	4
+153	:ok	:read	4
+181	:invoke	:read	nil
+140	:ok	:write	4
+182	:ok	:cas	[4 1]
+153	:invoke	:cas	[2 2]
+140	:invoke	:read	nil
+182	:invoke	:read	nil
+169	:ok	:read	1
+169	:invoke	:read	nil
+181	:ok	:read	1
+181	:invoke	:write	4
+153	:info	:cas	"indeterminate: \n"
+182	:ok	:read	1
+140	:ok	:read	1
+169	:ok	:read	1
+140	:invoke	:cas	[3 3]
+158	:invoke	:write	0
+182	:invoke	:read	nil
+169	:invoke	:write	2
+181	:ok	:write	4
+181	:invoke	:read	nil
+140	:info	:cas	"indeterminate: \n"
+158	:ok	:write	0
+169	:ok	:write	2
+145	:invoke	:read	nil
+182	:ok	:read	2
+158	:invoke	:cas	[1 3]
+169	:invoke	:read	nil
+181	:ok	:read	2
+182	:invoke	:write	3
+181	:invoke	:cas	[0 4]
+145	:ok	:read	2
+158	:info	:cas	"indeterminate: \n"
+145	:invoke	:read	nil
+169	:ok	:read	2
+169	:invoke	:cas	[2 3]
+182	:ok	:write	3
+181	:info	:cas	"indeterminate: \n"
+163	:invoke	:read	nil
+186	:invoke	:read	nil
+182	:invoke	:write	4
+145	:ok	:read	3
+169	:info	:cas	"indeterminate: \n"
+145	:invoke	:write	4
+163	:ok	:read	3
+:nemesis	:info	:stop	nil
+174	:invoke	:cas	[1 2]
+186	:ok	:read	3
+163	:invoke	:cas	[4 2]
+182	:ok	:write	4
+186	:invoke	:read	nil
+182	:invoke	:read	nil
+145	:ok	:write	4
+145	:invoke	:write	0
+:nemesis	:info	:stop	"crashed: java.util.concurrent.ExecutionException: java.lang.RuntimeException: jepsen_control.sh: line 6: log: Is a directory\njepsen_control.sh: line 72: ./braft_cli: No such file or directory\n\nadd atomic_server 192.168.223.132:8700\n"
+163	:ok	:cas	[4 2]
+174	:info	:cas	"indeterminate: \n"
+163	:invoke	:write	1
+186	:ok	:read	2
+179	:invoke	:write	1
+182	:ok	:read	2
+186	:invoke	:cas	[2 4]
+145	:ok	:write	0
+182	:invoke	:read	nil
+145	:invoke	:cas	[2 1]
+163	:ok	:write	1
+179	:ok	:write	1
+163	:invoke	:cas	[1 2]
+186	:info	:cas	"indeterminate: \n"
+182	:ok	:read	1
+179	:invoke	:read	nil
+145	:info	:cas	"indeterminate: \n"
+191	:invoke	:write	3
+182	:invoke	:write	2
+150	:invoke	:cas	[4 3]
+163	:ok	:cas	[1 2]
+163	:invoke	:read	nil
+179	:ok	:read	2
+191	:ok	:write	3
+182	:ok	:write	2
+179	:invoke	:write	4
+150	:info	:cas	"indeterminate: \n"
+191	:invoke	:cas	[2 4]
+182	:invoke	:cas	[4 4]
+163	:ok	:read	2
+155	:invoke	:write	1
+163	:invoke	:cas	[4 3]
+179	:ok	:write	4
+191	:info	:cas	"indeterminate: \n"
+179	:invoke	:cas	[0 1]
+182	:ok	:cas	[4 4]
+196	:invoke	:write	1
+155	:ok	:write	1
+163	:info	:cas	"indeterminate: \n"
+182	:invoke	:read	nil
+168	:invoke	:write	1
+155	:invoke	:write	3
+179	:info	:cas	"indeterminate: \n"
+196	:ok	:write	1
+184	:invoke	:write	0
+182	:ok	:read	1
+196	:invoke	:cas	[2 3]
+168	:ok	:write	1
+155	:ok	:write	3
+182	:invoke	:cas	[1 0]
+155	:invoke	:read	nil
+168	:invoke	:cas	[1 1]
+184	:ok	:write	0
+196	:info	:cas	"indeterminate: \n"
+184	:invoke	:cas	[4 0]
+182	:info	:cas	"indeterminate: \n"
+201	:invoke	:read	nil
+155	:ok	:read	0
+168	:info	:cas	"indeterminate: \n"
+187	:invoke	:write	3
+155	:invoke	:write	4
+173	:invoke	:write	2
+184	:info	:cas	"indeterminate: \n"
+201	:ok	:read	0
+189	:invoke	:write	4
+187	:ok	:write	3
+201	:invoke	:write	0
+173	:ok	:write	2
+155	:ok	:write	4
+187	:invoke	:write	3
+155	:invoke	:cas	[1 4]
+173	:invoke	:write	2
+189	:ok	:write	4
+189	:invoke	:write	1
+201	:ok	:write	0
+187	:ok	:write	3
+201	:invoke	:read	nil
+187	:invoke	:cas	[1 4]
+155	:info	:cas	"indeterminate: \n"
+173	:ok	:write	2
+160	:invoke	:write	1
+189	:ok	:write	1
+173	:invoke	:read	nil
+189	:invoke	:read	nil
+201	:ok	:read	1
+187	:ok	:cas	[1 4]
+201	:invoke	:cas	[2 2]
+160	:ok	:write	1
+187	:invoke	:write	3
+173	:ok	:read	1
+189	:ok	:read	1
+160	:invoke	:cas	[1 3]
+173	:invoke	:read	nil
+201	:info	:cas	"indeterminate: \n"
+189	:invoke	:write	4
+206	:invoke	:cas	[4 4]
+187	:ok	:write	3
+187	:invoke	:cas	[0 4]
+160	:info	:cas	"indeterminate: \n"
+173	:ok	:read	3
+189	:ok	:write	4
+206	:ok	:cas	[4 4]
+173	:invoke	:cas	[0 4]
+165	:invoke	:cas	[0 3]
+189	:invoke	:write	0
+187	:info	:cas	"indeterminate: \n"
+206	:invoke	:read	nil
+192	:invoke	:read	nil
+173	:info	:cas	"indeterminate: \n"
+165	:info	:cas	"indeterminate: \n"
+189	:ok	:write	0
+178	:invoke	:read	nil
+170	:invoke	:cas	[2 2]
+206	:ok	:read	0
+189	:invoke	:write	3
+192	:ok	:read	0
+206	:invoke	:read	nil
+192	:invoke	:write	1
+178	:ok	:read	0
+170	:info	:cas	"indeterminate: \n"
+178	:invoke	:read	nil
+189	:ok	:write	3
+206	:ok	:read	3
+175	:invoke	:cas	[3 1]
+192	:ok	:write	1
+:nemesis	:info	:start	nil
+:nemesis	:info	:start	"nemesis already disrupting (:n5)"
+189	:invoke	:read	nil
+206	:invoke	:write	3
+192	:invoke	:write	4
+178	:ok	:read	1
+175	:info	:cas	"indeterminate: \n"
+189	:ok	:read	1
+178	:invoke	:read	nil
+206	:ok	:write	3
+192	:ok	:write	4
+189	:invoke	:cas	[1 2]
+180	:invoke	:cas	[3 0]
+206	:invoke	:cas	[4 0]
+192	:invoke	:read	nil
+178	:ok	:read	4
+189	:info	:cas	"indeterminate: \n"
+178	:invoke	:cas	[4 0]
+180	:info	:cas	"indeterminate: \n"
+206	:ok	:cas	[4 0]
+194	:invoke	:write	3
+192	:ok	:read	0
+185	:invoke	:read	nil
+192	:invoke	:cas	[3 1]
+206	:invoke	:cas	[1 0]
+178	:info	:cas	"indeterminate: \n"
+183	:invoke	:cas	[3 1]
+194	:ok	:write	3
+185	:ok	:read	3
+206	:ok	:cas	[1 0]
+192	:ok	:cas	[3 1]
+194	:invoke	:write	3
+185	:invoke	:cas	[0 1]
+206	:invoke	:cas	[1 0]
+192	:invoke	:cas	[0 1]
+183	:info	:cas	"indeterminate: \n"
+188	:invoke	:read	nil
+194	:ok	:write	3
+194	:invoke	:read	nil
+185	:info	:cas	"indeterminate: \n"
+206	:info	:cas	"indeterminate: \n"
+192	:info	:cas	"indeterminate: \n"
+190	:invoke	:cas	[2 1]
+197	:invoke	:write	2
+188	:ok	:read	3
+211	:invoke	:cas	[1 4]
+188	:invoke	:cas	[4 4]
+194	:ok	:read	3
+190	:info	:cas	"indeterminate: \n"
+194	:invoke	:read	nil
+197	:ok	:write	2
+211	:info	:cas	"indeterminate: \n"
+195	:invoke	:write	4
+216	:invoke	:write	3
+197	:invoke	:read	nil
+188	:info	:cas	"indeterminate: \n"
+193	:invoke	:read	nil
+194	:ok	:read	2
+195	:ok	:write	4
+194	:invoke	:write	2
+216	:ok	:write	3
+197	:ok	:read	3
+195	:invoke	:write	0
+216	:invoke	:read	nil
+197	:invoke	:cas	[2 2]
+193	:ok	:read	3
+194	:ok	:write	2
+193	:invoke	:read	nil
+194	:invoke	:write	2
+195	:ok	:write	0
+216	:ok	:read	0
+197	:info	:cas	"indeterminate: \n"
+216	:invoke	:write	3
+195	:invoke	:write	0
+202	:invoke	:write	1
+193	:ok	:read	0
+193	:invoke	:cas	[1 0]
+194	:ok	:write	2
+194	:invoke	:cas	[0 4]
+216	:ok	:write	3
+195	:ok	:write	0
+202	:ok	:write	1
+193	:ok	:cas	[1 0]
+194	:ok	:cas	[0 4]
+:nemesis	:info	:stop	nil
+:nemesis	:info	:stop	"crashed: java.util.concurrent.ExecutionException: java.lang.RuntimeException: jepsen_control.sh: line 6: log: Is a directory\njepsen_control.sh: line 72: ./braft_cli: No such file or directory\n\nadd atomic_server 192.168.223.132:8700\n"
+:nemesis	:info	:stop	nil
+:nemesis	:info	:stop	"crashed: java.util.concurrent.ExecutionException: java.lang.RuntimeException: jepsen_control.sh: line 6: log: Is a directory\njepsen_control.sh: line 72: ./braft_cli: No such file or directory\n\nadd atomic_server 192.168.223.132:8700\n"
+216	:invoke	:read	nil
+216	:ok	:read	4
