@@ -116,8 +116,12 @@ friend class NodeImpl;
 };
 
 inline int random_timeout(int timeout_ms) {
+    LOG(ERROR) << "random_timeout function changed!";
     int32_t delta = std::min(timeout_ms, FLAGS_raft_max_election_delay_ms);
-    return butil::fast_rand_in(timeout_ms, timeout_ms + delta);
+    int result = butil::fast_rand_in(timeout_ms, timeout_ms + delta);
+    
+    LOG(ERROR) << std::getenv("NODE_NAME") << " got timeout value: " << result;
+    return result;
 }
 
 DEFINE_int32(raft_election_heartbeat_factor, 10, "raft election:heartbeat timeout factor");
