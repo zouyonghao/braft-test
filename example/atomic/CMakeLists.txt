@@ -125,6 +125,7 @@ set(DYNAMIC_LIB
     crypto
     dl
     z
+    /home/zyh/distributed-system-test/build/core/libdst_event.so
     )
 
 target_link_libraries(atomic_client
