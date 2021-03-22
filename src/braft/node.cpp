@@ -115,12 +115,19 @@ friend class NodeImpl;
     int64_t _lease_epoch;
 };
 
+extern "C" int __dst_event_trigger(const char *s);
+extern "C" uint16_t __dst_get_random_uint16_t();
 inline int random_timeout(int timeout_ms) {
     LOG(ERROR) << "random_timeout function changed!";
     int32_t delta = std::min(timeout_ms, FLAGS_raft_max_election_delay_ms);
-    int result = butil::fast_rand_in(timeout_ms, timeout_ms + delta);
+    int result = __dst_get_random_uint16_t();
+    
+    if (result == 0) {
+        result = butil::fast_rand_in(timeout_ms, timeout_ms + delta);
+    }
     
     LOG(ERROR) << std::getenv("NODE_NAME") << " got timeout value: " << result;
+    __dst_event_trigger((std::string(std::getenv("NODE_NAME")) + " got timeout value: " + std::to_string(result)).c_str());
     return result;
 }
 

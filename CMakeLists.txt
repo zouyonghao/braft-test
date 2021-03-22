@@ -117,6 +117,8 @@ else()
         ${OPENSSL_CRYPTO_LIBRARY}
         dl
         z
+        /home/zyh/distributed-system-test/build/core/libdst_event.so
+        /home/zyh/distributed-system-test/build/core/libdst_random.so
 	)
 endif()
 
@@ -247,3 +249,5 @@ install(DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/output/include/
         PATTERN "*.h"
         PATTERN "*.hpp"
         )
+
+include_directories(/home/zyh/distributed-system-test/core/include)
