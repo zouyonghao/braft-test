@@ -1,8 +1,8 @@
 export CC=/home/zyh/distributed-system-test/build/fuzz/default_compiler
 export CXX=/home/zyh/distributed-system-test/build/fuzz/default_compiler++
 
-cp /home/zyh/distributed-system-test/configs/*.json /tmp/
-cp /home/zyh/distributed-system-test/build/fuzz/CMakeFiles/default_instrument_lib.dir/instrumentor_lib/default_instrument_lib.c.o /tmp
+# cp /home/zyh/distributed-system-test/configs/*.json /tmp/
+# cp /home/zyh/distributed-system-test/build/fuzz/CMakeFiles/default_instrument_lib.dir/instrumentor_lib/default_instrument_lib.c.o /tmp
 
 rm -rf build
 
