@@ -44,7 +44,7 @@ endif()
 include_directories(${BRAFT_INCLUDE_PATH})
 
 find_path(GFLAGS_INCLUDE_PATH gflags/gflags.h)
-find_library(GFLAGS_LIBRARY NAMES gflags libgflags)
+find_library(GFLAGS_LIBRARY NAMES libgflags.a libgflags)
 if((NOT GFLAGS_INCLUDE_PATH) OR (NOT GFLAGS_LIBRARY))
     message(FATAL_ERROR "Fail to find gflags")
 endif()
@@ -125,8 +125,6 @@ set(DYNAMIC_LIB
     crypto
     dl
     z
-    /home/zyh/distributed-system-test/build/core/libdst_event.so
-    /home/zyh/distributed-system-test/build/core/libdst_random.so
     )
 
 target_link_libraries(atomic_client
