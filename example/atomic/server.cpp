@@ -475,7 +475,18 @@ private:
 
 }  // namespace example
 
+uint64_t GetCurTimeMs(void)
+{
+    struct timeval tv;
+    struct timezone tz;
+
+    gettimeofday(&tv, &tz);
+
+    return ((tv.tv_sec * 1000000ULL) + tv.tv_usec) / 1000;
+}
+
 int main(int argc, char* argv[]) {
+    printf("main time is %ld\n", GetCurTimeMs());
     GFLAGS_NS::ParseCommandLineFlags(&argc, &argv, true);
     butil::AtExitManager exit_manager;
 
@@ -516,6 +527,7 @@ int main(int argc, char* argv[]) {
     }
 
     LOG(INFO) << "Atomic service is running on " << server.listen_address();
+    printf("ready time is %ld\n", GetCurTimeMs());
     // Wait until 'CTRL-C' is pressed. then Stop() and Join() the service
     while (!brpc::IsAskedToQuit()) {
         sleep(1);
