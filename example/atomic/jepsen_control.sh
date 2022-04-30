@@ -5,10 +5,10 @@ ulimit -c unlimited
 
 echo "param is $1" > log
 
-nodes="192.168.223.128:8700 192.168.223.129:8700 192.168.223.130:8700 192.168.223.131:8700 192.168.223.132:8700"
+nodes="n1:8700 n2:8700 n3:8700 n4:8700 n5:8700"
 #self_ip=`ifconfig | grep "inet addr" | grep -v "127.0.0.1" | awk '{print substr($2,6,16)}'`
-self_ip=`ifconfig | grep "mask" | grep -v "127.0.0.1" | awk '{print $2}'`
-self_node=${self_ip}":8700"
+# self_ip=`ifconfig | grep "mask" | grep -v "127.0.0.1" | awk '{print $2}'`
+# self_node=${self_ip}":8700"
 
 peers=""
 exclude_peers=""
@@ -47,7 +47,7 @@ case $1 in
 	killall -9 atomic_server
         rm -rf log data run.log core.* && mkdir log
         #./atomic_server -raft_sync=true -bthread_concurrency=24 -crash_on_fatal_log=true -port=8700 > run.log 2>&1 &
-        ./atomic_server -raft_sync=true -bthread_concurrency=24 -ip=${self_ip} -port=8700 -conf="192.168.223.128:8700,192.168.223.129:8700,192.168.223.130:8700,192.168.223.131:8700,192.168.223.132:8700" -data_path="./data" > run.log 2>&1 &
+        ./atomic_server -raft_sync=true -bthread_concurrency=24 -port=8700 -conf="n1:8700,n2:8700,n3:8700,n4:8700,n5:8700" -data_path="./data" > run.log 2>&1 &
 	sleep 1
 	./braft_cli reset_peer --group=Atomic --peer=${self_node} --new_peers=${peers}
         ;;
@@ -55,7 +55,7 @@ case $1 in
         echo "start atomic_server "${self_node}
         rm -rf log data run.log core.* && mkdir log
         #./atomic_server -raft_sync=true -bthread_concurrency=24 -crash_on_fatal_log=true -port=8700 > run.log 2>&1 &
-        ./atomic_server -raft_sync=true -bthread_concurrency=24 -ip=${self_ip} -port=8700  -conf="192.168.223.128:8700,192.168.223.129:8700,192.168.223.130:8700,192.168.223.131:8700,192.168.223.132:8700" -data_path="./data" > run.log 2>&1 &
+        ./atomic_server -raft_sync=true -bthread_concurrency=24 -port=8700  -conf="n1:8700,n2:8700,n3:8700,n4:8700,n5:8700" -data_path="./data" > run.log 2>&1 &
         ;;
     stop)
         echo "stop atomic_server "${self_node}
@@ -65,7 +65,7 @@ case $1 in
         echo "restart atomic_server "${self_node}
         killall -9 atomic_server
         #./atomic_server -raft_sync=true -bthread_concurrency=24 -crash_on_fatal_log=true -port=8700 > run.log 2>&1 &
-        ./atomic_server -raft_sync=true -bthread_concurrency=24 -ip=${self_ip} -port=8700  -conf="192.168.223.128:8700,192.168.223.129:8700,192.168.223.130:8700,192.168.223.131:8700,192.168.223.132:8700" -data_path="./data" > run.log 2>&1 &
+        ./atomic_server -raft_sync=true -bthread_concurrency=24 -port=8700  -conf="n1:8700,n2:8700,n3:8700,n4:8700,n5:8700" -data_path="./data" > run.log 2>&1 &
         ;;
     join)
         echo "add atomic_server "${self_node}
