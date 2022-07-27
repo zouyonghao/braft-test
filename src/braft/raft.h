@@ -463,7 +463,7 @@ struct LeaderLeaseStatus {
 
     LeaseState state;
 
-    // These followering fields are only meaningful when |state == LEASE_VALID|.
+    // These following fields are only meaningful when |state == LEASE_VALID|.
     
     // The term of this lease
     int64_t term;
@@ -479,6 +479,11 @@ struct NodeOptions {
     // from the leader in |election_timeout_ms| milliseconds
     // Default: 1000 (1s)
     int election_timeout_ms; //follower to candidate timeout
+
+    // wait new peer to catchup log in |catchup_timeout_ms| milliseconds
+    // if set to 0, it will same as election_timeout_ms
+    // Default: 0
+    int catchup_timeout_ms;
 
     // Max clock drift time. It will be used to keep the safety of leader lease.
     // Default: 1000 (1s)
@@ -521,7 +526,7 @@ struct NodeOptions {
     // Default: false
     bool node_owns_fsm;
 
-    // The specific LogStorage implemented at the bussiness layer, which should be a valid
+    // The specific LogStorage implemented at the business layer, which should be a valid
     // instance, otherwise use SegmentLogStorage by default.
     //
     // Default: null
@@ -585,10 +590,13 @@ struct NodeOptions {
 
     // Construct a default instance
     NodeOptions();
+
+    int get_catchup_timeout_ms();
 };
 
 inline NodeOptions::NodeOptions() 
     : election_timeout_ms(1000)
+    , catchup_timeout_ms(0)
     , max_clock_drift_ms(1000)
     , snapshot_interval_s(3600)
     , catchup_margin(1000)
@@ -602,6 +610,10 @@ inline NodeOptions::NodeOptions()
     , snapshot_throttle(NULL)
     , disable_cli(false)
 {}
+
+inline int NodeOptions::get_catchup_timeout_ms() {
+    return (catchup_timeout_ms == 0) ? election_timeout_ms : catchup_timeout_ms;
+}
 
 class NodeImpl;
 class Node {
@@ -620,7 +632,7 @@ public:
 
     // Return true if this is the leader, and leader lease is valid. It's always
     // false when |raft_enable_leader_lease == false|.
-    // In the follwing situations, the returned true is unbeleivable:
+    // In the following situations, the returned true is unbeleivable:
     //    -  Not all nodes in the raft group set |raft_enable_leader_lease| to true,
     //       and tranfer leader/vote interfaces are used;
     //    -  In the raft group, the value of |election_timeout_ms| in one node is larger

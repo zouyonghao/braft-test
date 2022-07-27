@@ -33,3 +33,6 @@ CTestTestfile.cmake
 /third-party
 example/atomic/*.ll
 jepsen/store
+
+# Github aciton
+!.github
