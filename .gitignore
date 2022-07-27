@@ -32,3 +32,4 @@ CTestTestfile.cmake
 /build
 /third-party
 example/atomic/*.ll
+jepsen/store
