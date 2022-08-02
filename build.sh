@@ -6,8 +6,8 @@
 
 # export CC="clang-9"
 # export CXX="clang++-9"
-export CC=gcc-9
-export CXX=gcc-9
+export CC=gcc
+export CXX=gcc
 
 rm -rf build
 
