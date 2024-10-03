@@ -6,8 +6,8 @@
 
 # export CC="clang-9"
 # export CXX="clang++-9"
-export CC=gcc
-export CXX=gcc
+export CC="clang-9 -fsanitize=address"
+export CXX="clang++-9 -fsanitize=address"
 
 rm -rf build
 
