@@ -14,7 +14,7 @@ rm -rf build
 mkdir build
 cd build
 cmake ..
-make -j12
+make -j$(nproc)
 
 cd ../example/atomic
 
